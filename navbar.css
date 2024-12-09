@@ -82,7 +82,7 @@ header {
   align-items: center;
 }
 
-.side-menu .menu-header .span {
+.side-menu .menu-header .logo {
   display: flex;
   justify-content: space-between;
 }
@@ -141,7 +141,7 @@ header {
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-.side-menu.open~.navbar-overlay {
+.side-menu.open ~ .navbar-overlay {
   opacity: 0.8;
   visibility: visible;
 }
