@@ -1,0 +1,147 @@
+header {
+  background-color: #111;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0rem;
+}
+
+.nav-menu-bar {
+  display: none;
+}
+
+.navbar .logo {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.navbar ul li a:hover {
+  color: #6737ff;
+  transition: .5s;
+  line-height: 1;
+}
+
+@media screen and (max-width:1080px) {
+  nav {
+    display: none;
+  }
+
+  .nav-menu-bar {
+    display: flex;
+    color: #fff;
+  }
+
+  .nav-menu-bar:hover {
+    color: #6737ff;
+    transition: 0.5s;
+  }
+
+  .hire-me {
+    display: none;
+  }
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #121212;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+  z-index: 999;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu .menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side-menu .menu-header .span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-menu .menu-header .span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.side-menu .close-btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.side-menu .close-btn:hover {
+  color: #6737ff;
+  transition: 0.5s;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.side-menu ul li {
+  padding: 8px 0px;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  display: block;
+}
+
+.side-menu ul li a:hover {
+  color: #6737ff;
+  transition: 0.5s;
+}
+
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.side-menu.open~.navbar-overlay {
+  opacity: 0.8;
+  visibility: visible;
+}

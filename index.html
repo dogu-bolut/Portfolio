@@ -1,10 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Dogu Bolut</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./hero.css">
 </head>
+
 <body>
-$END$
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <span>Portfolio.</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Projects</a></li>
+                        <li><a href="">Skills</a></li>
+                        <li><a href="">Testimonial</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="btn-primary hire-me">Hire me</button>
+                <div class="nav-menu-bar" onclick="toggleMenu();">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+            <div class=" side-menu main-content" id="sideMenu">
+                <div class="menu-header">
+                    <span class="logo">Portfolio.</span>
+                    <button class="close-btn" onclick="toggleMenu();">X</button>
+                </div>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">Skills</a></li>
+                    <li><a href="">Testimonial</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+                <button class="btn-primary">Hire me</button>
+            </div>
+            <div class="navbar-overlay" id="navOverlay" onclick="toggleMenu();">
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-container">
+                    <div class="left-container">
+                        <h6 class="intro">Hi, I'm <span>Dogu Bolut</span></h6>
+                        <h2>Software Developer</h2>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, sit magnam! Enim
+                            voluptates eligendi, placeat dolorum soluta architecto aperiam obcaecati possimus
+                            perspiciatis distinctio culpa eaque ipsa dolore cumque porro rerum!
+                        </p>
+
+                        <div class="social-media">
+                            <h4>Social Accounts</h4>
+                            <i class="fab fa-linkedin"></i>
+                            <i class="fab fa-github"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="buttons">
+                            <a href="" class="btn-primary">Book Meeting</a>
+                            <button class="explore-btn"><i class="fa fa-arrow-right"></i>Download CV</button>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <div class="profile">
+                            <img src="./eagle.png" alt="">
+                            <div class="features">
+                                <div class="css">
+                                    <i class="fab fa-css fa-fade"></i>
+                                </div>
+                                <div class="js">
+                                    <i class="fa-brands fa-square-js fa-fade"></i>
+                                </div>
+                                <div class="html">
+                                    <i class="fab fa-html5 fa-fade"></i>
+                                </div>
+                                <div class="nodejs">
+                                    <i class="fa-brands fa-node fa-fade"></i>
+                                </div>
+                                <div class="angular">
+                                    <i class="fa-brands fa-angular fa-fade"></i>
+                                </div>
+                                <div class="unity">
+                                    <i class="fa-brands fa-unity fa-fade"></i>
+                                </div>
+                                <div class="database">
+                                    <i class="fa-solid fa-database fa-fade"></i>
+                                </div>
+                                <div class="linux">
+                                    <i class="fa-brands fa-linux fa-fade"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./main.js"></script>
 </body>
+
 </html>

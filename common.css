@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0px auto;
+  padding: 0px 2rem;
+}
+
+.btn-primary {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3em;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 2px;
+  background-color: #6737ff;
+  padding: 8px 20px;
+  display: inline-block;
+  transition: .5s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary:hover {
+  color: #6737ff;
+}
+
+.btn-primary:hover::after {
+  transform: skewX(45deg) scaleX(1);
+}
+
+.btn-primary::after {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 8%;
+  right: -20%;
+  top: -4%;
+  height: 150%;
+  width: 150%;
+  border-radius: 2px;
+  background-color: #fff;
+  transform: skewX(45deg) scaleX(0);
+  z-index: -1;
+  transition: all .5s ease-in-out 0s;
+}
+
+.explore-btn{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: .03em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.explore-btn i{
+  height: 35px;
+  width: 35px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.explore-btn:hover{
+  color: #6737ff;
+  transition: 0.3s ease-in all;
+}
+
+.explore-btn:hover i{
+  border: 1px solid #6737ff;
+  rotate: 90deg;
+  transition: 0.3s ease all;
+}
+
+@media screen and (max-width:1080px) {
+  .container{
+    padding: 0.2rem 1rem;
+  }
+}
