@@ -33,7 +33,7 @@ header {
 }
 
 .navbar ul li a:hover {
-  color: #6737ff;
+  color: var(--color-tomato);
   transition: .5s;
   line-height: 1;
 }
@@ -49,7 +49,7 @@ header {
   }
 
   .nav-menu-bar:hover {
-    color: #6737ff;
+    color: var(--color-tomato);
     transition: 0.5s;
   }
 
@@ -101,7 +101,7 @@ header {
 }
 
 .side-menu .close-btn:hover {
-  color: #6737ff;
+  color: var(--color-tomato);
   transition: 0.5s;
 }
 
@@ -123,7 +123,7 @@ header {
 }
 
 .side-menu ul li a:hover {
-  color: #6737ff;
+  color: var(--color-tomato);
   transition: 0.5s;
 }
 

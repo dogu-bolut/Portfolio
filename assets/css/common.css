@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
 
+:root{
+  /* Vibrant Oranges */
+  --color-orange-red: #FF4500;
+  --color-tomato: #FF6347;
+  --color-classic-orange: #FFA500;
+  --color-dark-orange: #FF8C00;
+  --color-coral: #FF7F50;
+  /* Subtle and Muted Oranges */
+  --color-golden-orange: #E59400;
+  --color-chocolate-orange: #D2691E;
+  --color-pastel-orange: #FFB347;
+  --color-muted-sunset: #E6A157;
+  --color-bronze-orange: #CC7722;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +41,7 @@ a {
   cursor: pointer;
   color: white;
   border-radius: 2px;
-  background-color: #6737ff;
+  background-color: var(--color-chocolate-orange);
   padding: 8px 20px;
   display: inline-block;
   transition: .5s;
@@ -36,7 +51,7 @@ a {
 }
 
 .btn-primary:hover {
-  color: #6737ff;
+  color: var(--color-chocolate-orange);
 }
 
 .btn-primary:hover::after {
@@ -85,12 +100,12 @@ a {
 }
 
 .explore-btn:hover{
-  color: #6737ff;
+  color: var(--color-chocolate-orange);
   transition: 0.3s ease-in all;
 }
 
 .explore-btn:hover i{
-  border: 1px solid #6737ff;
+  border: 1px solid var(--color-chocolate-orange);
   rotate: 90deg;
   transition: 0.3s ease all;
 }
@@ -110,4 +125,53 @@ a {
   .explore-btn{
     font-size: 14px;
   }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 8px 17px;
+  }
+}
+
+.section-heading{
+  text-align: center;
+  width: 100%;
+}
+
+.section-heading .opacity-bg h2{
+  text-align: center;
+  color: #000;
+  z-index: 0;
+  user-select: none;
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  letter-spacing: 2px;
+  font-size: 70px;
+  text-shadow: -1px -1px 0 var(--color-bronze-orange),
+  1px -1px 0 var(--color-bronze-orange),
+  -1px 1px 0 var(--color-bronze-orange),
+  1px 1px 0 var(--color-bronze-orange);
+}
+
+.main-heading{
+  z-index: 900;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.main-heading p{
+  margin: 8px auto;
+  color: gray;
+  font-weight: 200;
+}
+
+.main-heading h2{
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.main-heading h2 span{
+  color: var(--color-chocolate-orange);
 }

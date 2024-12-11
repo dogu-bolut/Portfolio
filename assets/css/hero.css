@@ -29,7 +29,7 @@
 }
 
 .hero-container .left-container .intro span{
-  color: #6737ff;
+  color: var(--color-pastel-orange);
 }
 
 .hero-container .left-container h2{
