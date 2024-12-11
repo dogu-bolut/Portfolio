@@ -217,6 +217,10 @@
     width: 250px;
   }
 
+  .hero-container .left-container .intro{
+    margin-bottom: 10px;
+  }
+
   .hero-section .left-container h2{
     font-size: 25px;
   }
