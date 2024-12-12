@@ -73,8 +73,8 @@
 }
 
 .hero-container .right-container .profile img{
-  width: 400px;
-  border-radius: 35%;
+  width: 380px;
+  padding-bottom: 50px;
   /* background-image: linear-gradient(to top, #4b4b4b 0%, #111 80%); */
 }
 
@@ -154,7 +154,7 @@
 }
 
 .hero-container .right-container .features .unity{
-  top: 50px;
+  top: 0px;
   right: 30%;
   color: #b1b1b1;
 }
@@ -164,7 +164,7 @@
 }
 
 .hero-container .right-container .features .database{
-  top: 10px;
+  top: -30px;
   right: 55%;
   color: #00558b;
 }
