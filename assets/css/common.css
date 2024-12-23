@@ -157,14 +157,14 @@ a {
 .main-heading{
   z-index: 900;
   position: relative;
-  color: #fff;
+  color: #bbb;
   text-align: center;
 }
 
 .main-heading p{
   margin: 8px auto;
   color: gray;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .main-heading h2{

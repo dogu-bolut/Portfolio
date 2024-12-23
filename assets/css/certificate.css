@@ -1,0 +1,99 @@
+.certificate-section{
+  background-color: #111;
+  padding: 3rem 0rem;
+  position: relative;
+}
+
+.certificate-section .certificate-container{
+  margin-top: 3rem;
+}
+
+.certificate-section .certificates{
+  display: grid;
+  gap: 20px;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+}
+
+.certificate-section .certificate-item{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: start;
+  border: 1px solid #2c2c2c;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #0a0a0a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-section .certificate-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/wheat_batch.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  margin-right: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.certificate-section .icon-content p{
+  margin-bottom: 2px;
+  font-weight: 500;
+  color: #ddd;
+  font-size: 12px;
+}
+
+.certificate-section .icon-content h6{
+  margin-bottom: 2px;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--color-pastel-orange);
+}
+
+.certificate-section .certificate-star{
+  color: #fff;
+}
+
+.hr-line{
+  margin: 10px auto;
+  border: .2px solid #666;
+}
+
+.certificate-item .certificate-details h2{
+  color: var(--color-chocolate-orange);
+  font-size: 19px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.certificate-item .certificate-details p{
+  color: #888;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.certificate-item .certificate-details h3{
+  color: #fff;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1080px) {
+  .certificate-section .certificates{
+    grid-template-columns: 1fr;
+  }
+  .certificate-section .certificate-icon{
+    display: none;
+  }
+  .certificate-section .certificate-item{
+    display: flex;
+    align-items: center;
+  }
+}
