@@ -8,14 +8,14 @@
   margin-top: 3rem;
 }
 
-.skills-container .skills{
+.skills{
   display: grid;
   gap: 40px;
   justify-content: space-between;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.skills-container .skill-item{
+.skill-item{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@
   overflow: hidden;
 }
 
-.skills-container .skill-item img{
+.skill-item img{
   width: 60px;
   height: 60px;
   margin: 0;
@@ -43,7 +43,7 @@
   margin-top: 10px;
 }
 
-.skills-container .indicator{
+/* .skill-item .indicator{
   position: absolute;
   top: 50%;
   left: -4px;
@@ -52,7 +52,7 @@
   height: 50px;
   background-color: var(--color-golden-orange);
   border-radius: 8px 0 0 8px;
-}
+} */
 
 .ribbon{
   width: 100%;
