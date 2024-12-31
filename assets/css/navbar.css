@@ -33,7 +33,7 @@ header {
 }
 
 .navbar ul li a:hover {
-  color: var(--color-tomato);
+  color: var(--color-classic-orange);
   transition: .5s;
   line-height: 1;
 }
@@ -49,7 +49,7 @@ header {
   }
 
   .nav-menu-bar:hover {
-    color: var(--color-tomato);
+    color: var(--color-classic-orange);
     transition: 0.5s;
   }
 
@@ -76,23 +76,23 @@ header {
   left: 0;
 }
 
-.side-menu .menu-header {
+.menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.side-menu .menu-header .logo {
+.menu-header .logo {
   display: flex;
   justify-content: space-between;
 }
 
-.side-menu .menu-header .span {
+.menu-header .span {
   font-size: 20px;
   font-weight: 600;
 }
 
-.side-menu .close-btn {
+.close-btn {
   background-color: transparent;
   border: none;
   color: #fff;
@@ -100,8 +100,8 @@ header {
   cursor: pointer;
 }
 
-.side-menu .close-btn:hover {
-  color: var(--color-tomato);
+.close-btn:hover {
+  color: var(--color-classic-orange);
   transition: 0.5s;
 }
 
@@ -123,7 +123,7 @@ header {
 }
 
 .side-menu ul li a:hover {
-  color: var(--color-tomato);
+  color: var(--color-classic-orange);
   transition: 0.5s;
 }
 

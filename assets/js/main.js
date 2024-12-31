@@ -1,3 +1,6 @@
+const date = document.getElementById('date');
+date.innerHTML = new Date().getFullYear();
+
 function toggleMenu(){
   const sideMenu = document.getElementById('sideMenu');
   const overlay = document.getElementById('navOverlay');

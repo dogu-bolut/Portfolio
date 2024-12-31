@@ -41,7 +41,7 @@ a {
   cursor: pointer;
   color: white;
   border-radius: 2px;
-  background-color: var(--color-chocolate-orange);
+  background-color: var(--color-dark-orange);
   padding: 8px 20px;
   display: inline-block;
   transition: .5s;
@@ -51,7 +51,7 @@ a {
 }
 
 .btn-primary:hover {
-  color: var(--color-chocolate-orange);
+  color: var(--color-dark-orange);
 }
 
 .btn-primary:hover::after {
@@ -100,14 +100,49 @@ a {
 }
 
 .explore-btn:hover{
-  color: var(--color-chocolate-orange);
+  color: var(--color-dark-orange);
   transition: 0.3s ease-in all;
 }
 
 .explore-btn:hover i{
-  border: 1px solid var(--color-chocolate-orange);
+  border: 1px solid var(--color-dark-orange);
   rotate: 90deg;
   transition: 0.3s ease all;
+}
+
+.section-heading{
+  text-align: center;
+  width: 100%;
+}
+
+.opacity-bg h2{
+  text-align: center;
+  color: #000;
+  z-index: 0;
+  user-select: none;
+  opacity: 0.2;
+  position: relative;
+  left: 0;
+  right: 0;
+  letter-spacing: 2px;
+  font-size: 70px;
+  text-shadow: -1px -1px 0 var(--color-classic-orange),
+  1px -1px 0 var(--color-dark-orange),
+  -1px 1px 0 var(--color-tomato),
+  1px 1px 0 var(--color-orange-red);
+}
+
+footer{
+  background-color: #111;
+  padding: 15px 3px;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  word-spacing: 4px;
+}
+
+footer p span{
+  color: var(--color-golden-orange);
 }
 
 @media screen and (max-width:1080px) {
@@ -130,48 +165,15 @@ a {
     font-size: 14px;
     padding: 8px 17px;
   }
+
+  footer{
+    word-spacing: 1px;
+    font-weight: 300;
+  }
 }
 
-.section-heading{
-  text-align: center;
-  width: 100%;
-}
-
-.opacity-bg h2{
-  text-align: center;
-  color: #000;
-  z-index: 0;
-  user-select: none;
-  opacity: 0.2;
-  position: absolute;
-  left: 0;
-  right: 0;
-  letter-spacing: 2px;
-  font-size: 70px;
-  text-shadow: -1px -1px 0 var(--color-bronze-orange),
-  1px -1px 0 var(--color-bronze-orange),
-  -1px 1px 0 var(--color-bronze-orange),
-  1px 1px 0 var(--color-bronze-orange);
-}
-
-.main-heading{
-  z-index: 900;
-  position: relative;
-  color: #bbb;
-  text-align: center;
-}
-
-.main-heading p{
-  margin: 8px auto;
-  color: gray;
-  font-weight: 300;
-}
-
-.main-heading h2{
-  font-size: 35px;
-  font-weight: 600;
-}
-
-.main-heading h2 span{
-  color: var(--color-chocolate-orange);
+@media screen and (max-width:768px) {
+  .opacity-bg h2{
+    font-size: 60px;
+  }
 }
