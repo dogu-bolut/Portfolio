@@ -13,6 +13,10 @@
   gap: 4rem;
 }
 
+.contact-details{
+  padding-top: 20px;
+}
+
 .contact-left h2{
   font-size: 2rem;
   color: #fff;
@@ -27,8 +31,9 @@
 }
 
 .contact-left .icon{
-  font-size: 1.5rem;
-  margin-right: 10px;
+  font-size: 1.2rem;
+  margin-right: 20px;
+  letter-spacing: 1.2rem;
 }
 
 .contact-item{
