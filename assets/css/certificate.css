@@ -42,22 +42,25 @@
   font-size: 12px;
 }
 
+.icon-content h2{
+  margin-bottom: 2px;
+  font-weight: 500;
+  color: #aaa;
+  font-size: 16px;
+}
+
 .icon-content p{
   margin-bottom: 2px;
   font-weight: 500;
   color: #ddd;
-  font-size: 12px;
+  font-size: 9px;
 }
 
 .icon-content h6{
   margin-bottom: 2px;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 10px;
   color: var(--color-pastel-orange);
-}
-
-.certificate-star{
-  color: #fff;
 }
 
 .hr-line{

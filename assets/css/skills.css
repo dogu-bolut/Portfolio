@@ -43,7 +43,7 @@
   margin-top: 10px;
 }
 
-/* .skill-item .indicator{
+.skill-item .indicator{
   position: absolute;
   top: 50%;
   left: -4px;
@@ -52,18 +52,18 @@
   height: 50px;
   background-color: var(--color-golden-orange);
   border-radius: 8px 0 0 8px;
-} */
+}
 
-.ribbon{
+/* .ribbon{
   width: 100%;
   height: 188px;
   position: absolute;
   top: -8px;
   left: 8px;
   overflow: hidden;
-}
+} */
 
-.ribbon .ribbon-band{
+/* .ribbon .ribbon-band{
   box-shadow: 0 0 0 3px var(--color-golden-orange), 0 21px 5px -18px rgba(122, 130, 177, 0.6);
   background-color: var(--color-golden-orange);
   width: 170px;
@@ -80,7 +80,13 @@
   border: 2px dotted var(--color-chocolate-orange);
   font-size: 11px;
   font-weight: 500;
-}
+} */
+
+/* <div class="ribbon">
+    <div class="ribbon-band">
+        50%
+    </div>
+</div> */
 
 @media screen and (max-width: 1080px){
   .skills-container .skills{

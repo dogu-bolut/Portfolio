@@ -43,6 +43,17 @@
   color: #777;
 }
 
+.contact-item a{
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  color: #777;
+}
+
+.contact-item a:hover{
+  color: var(--color-chocolate-orange);
+}
+
 .contact-right{
   color: #ddd;
   padding: 10px;
