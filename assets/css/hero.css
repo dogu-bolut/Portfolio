@@ -221,12 +221,12 @@
     margin-bottom: 10px;
   }
 
-  .left-container{
-    padding-top: 150px;
+  .hero-section{
+    height: 120vh;
   }
 
-  .right-container{
-    padding-bottom: 150px;
+  .left-container{
+    padding-top: 150px;
   }
 
   .left-container h2{
