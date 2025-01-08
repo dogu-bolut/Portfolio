@@ -225,6 +225,10 @@
     padding-top: 150px;
   }
 
+  .right-container{
+    padding-bottom: 150px;
+  }
+
   .left-container h2{
     font-size: 25px;
   }
