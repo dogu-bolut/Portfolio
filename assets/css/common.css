@@ -130,10 +130,10 @@ a {
   right: 0;
   letter-spacing: 2px;
   font-size: 70px;
-  text-shadow: -1px -1px 0 var(--color-classic-orange),
-  1px -1px 0 var(--color-dark-orange),
-  -1px 1px 0 var(--color-tomato),
-  1px 1px 0 var(--color-orange-red);
+  text-shadow: -1px -1px 0 var(--color-golden-orange), -1px -1px 10px var(--color-golden-orange),
+  1px -1px 0 var(--color-chocolate-orange), 1px -1px 10px var(--color-chocolate-orange),
+  -1px 1px 0 var(--color-tomato), -1px 1px 10px var(--color-tomato),
+  1px 1px 0 var(--color-orange-red) ,1px 1px 10px var(--color-orange-red);
 }
 
 footer{
