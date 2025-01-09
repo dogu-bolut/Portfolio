@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="./assets/css/navbar.css">
     <link rel="stylesheet" href="./assets/css/hero.css">
-    <link rel="stylesheet" href="./assets/css/services.css">
+    <link rel="stylesheet" href="./assets/css/experiences.css">
     <link rel="stylesheet" href="./assets/css/certificate.css">
     <link rel="stylesheet" href="./assets/css/skills.css">
     <link rel="stylesheet" href="./assets/css/project.css">
@@ -20,21 +20,22 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="navbar">
+        <div id="home" class="container">
+            <div id="nav" class="navbar">
                 <div class="logo">
                     <span>Portfolio</span>
                 </div>
                 <nav>
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Certificates</a></li>
-                        <li><a href="">Skills</a></li>
-                        <li><a href="">Projects</a></li>
-                        <li><a href="">Contacts</a></li>
-                    </ul>
+                    <div class="links-container">
+                        <ul>
+                            <li><a href="#home" class="scroll-link">Home</a></li>
+                            <li><a href="#experiences" class="scroll-link">Experiences</a></li>
+                            <li><a href="#certificates" class="scroll-link">Certificates</a></li>
+                            <li><a href="#skills" class="scroll-link">Skills</a></li>
+                            <li><a href="#projects" class="scroll-link">Projects</a></li>
+                            <li><a href="#contact" class="scroll-link">Contacts</a></li>
+                        </ul>
+                    </div>
                 </nav>
                 <button class="btn-primary hire-me">Hire me</button>
                 <div class="nav-menu-bar" onclick="toggleMenu();">
@@ -47,13 +48,12 @@
                     <button class="close-btn" onclick="toggleMenu();">X</button>
                 </div>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Projects</a></li>
-                    <li><a href="">Skills</a></li>
-                    <li><a href="">Testimonial</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contacts</a></li>
                 </ul>
                 <button class="btn-primary">Hire me</button>
             </div>
@@ -72,7 +72,8 @@
                         <p class="description">
                             This website shows my portfolio. Feel free to explore the links below, where you can find
                             details about almost every project I've worked on. If you have any questions, please don't
-                            hesitate to reach out to me via email.
+                            hesitate to reach out to me via email. &emsp;
+                            <button> Learn more about me!<i class="fa fa-long-arrow-alt-right"></i></button>
                         </p>
                         <div class="social-media">
                             <a href="https://www.linkedin.com/in/dogu-bolut/" target="_blank">
@@ -88,6 +89,7 @@
                                 <i class="fa-brands fa-x-twitter"></i>
                             </a>
                         </div>
+
                         <div class="buttons">
                             <a href="https://calendar.app.google/oDQZRGp8SBAZg6HM9" class="btn-primary"
                                 target="_blank">Book Meeting</a>
@@ -131,16 +133,16 @@
                 </div>
             </div>
         </section>
-        <section class="services-section">
+        <section id="experiences" class="experiences-section">
             <div class="container">
                 <div class="section-heading">
                     <div class="opacity-bg">
-                        <h2>Services</h2>
+                        <h2>Experiences</h2>
                     </div>
                 </div>
-                <div class="services-container">
-                    <div class="services">
-                        <div class="service-item">
+                <div class="experiences-container">
+                    <div class="experiences">
+                        <div class="experience-item">
                             <div class="indicator"></div>
                             <div class="icon">
                                 <img src="assets/img/web-development.png" alt="">
@@ -149,7 +151,7 @@
                                 <button>Learn more <i class="fa fa-long-arrow-alt-right"></i></button>
                             </div>
                         </div>
-                        <div class="service-item">
+                        <div class="experience-item">
                             <div class="indicator"></div>
                             <div class="icon">
                                 <img src="assets/img/game-development.png" alt="">
@@ -158,7 +160,7 @@
                                 <button>Learn more <i class="fa fa-long-arrow-alt-right"></i></button>
                             </div>
                         </div>
-                        <div class="service-item">
+                        <div class="experience-item">
                             <div class="indicator"></div>
                             <div class="icon">
                                 <img src="assets/img/data-analysis.png" alt="">
@@ -167,7 +169,7 @@
                                 <button>Learn more <i class="fa fa-long-arrow-alt-right"></i></button>
                             </div>
                         </div>
-                        <div class="service-item">
+                        <div class="experience-item">
                             <div class="indicator"></div>
                             <div class="icon">
                                 <img src="assets/img/graphics-design.png" alt="">
@@ -180,7 +182,7 @@
                 </div>
             </div>
         </section>
-        <section class="certificate-section">
+        <section id="certificates" class="certificate-section">
             <div class="container">
                 <div class="section-heading">
                     <div class="opacity-bg">
@@ -272,7 +274,7 @@
                 </div>
             </div>
         </section>
-        <section class="skills-section">
+        <section id="skills" class="skills-section">
             <div class="container">
                 <div class="section-heading">
                     <div class="opacity-bg">
@@ -369,7 +371,7 @@
                 </div>
             </div>
         </section>
-        <section class="project-section">
+        <section id="projects" class="project-section">
             <div class="container">
                 <div class="section-heading">
                     <div class="opacity-bg">
@@ -424,7 +426,7 @@
                 </div>
             </div>
         </section>
-        <section class="contact-section">
+        <section id="contact" class="contact-section">
             <div class="container">
                 <div class="section-heading">
                     <div class="opacity-bg">
@@ -478,6 +480,9 @@
                 <span id="date"></span>, All Rights Reserved.
             </p>
         </footer>
+        <a href="#home" class="scroll-link top-link">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </main>
 
     <script src="./assets/js/main.js"></script>

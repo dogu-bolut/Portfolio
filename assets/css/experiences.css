@@ -1,21 +1,21 @@
-.services-section{
+.experiences-section{
   background-color: #000;
   padding: 5rem 0px;
   position: relative;
 }
 
-.services-container{
+.experiences-container{
   margin-top: 3rem;
 }
 
-.services{
+.experiences{
   display: grid;
   gap: 20px;
   justify-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.service-item{
+.experience-item{
   padding: 1rem 1rem;
   border: 1px solid #2b2a2a;
   border-radius: 10px;
@@ -23,7 +23,7 @@
   background-color: #111;
 }
 
-.service-item .indicator{
+.experience-item .indicator{
   position: absolute;
   top: 50%;
   left: -4px;
@@ -34,27 +34,27 @@
   border-radius: 8px 0 0 8px;
 }
 
-.service-item img{
+.experience-item img{
   width: 50px;
   height: 50px;
   justify-content: center;
   align-items: center;
 }
 
-.service-item h2{
+.experience-item h2{
   color: #fff;
   font-size: 17px;
   letter-spacing: 1px;
   margin: 15px auto;
 }
 
-.service-item h2:hover{
+.experience-item h2:hover{
   color: var(--color-dark-orange);
   transition: 0.8s;
   cursor: pointer;
 }
 
-.service-item p{
+.experience-item p{
   color: #999;
   font-size: 13px;
   font-weight: 300;
@@ -62,7 +62,7 @@
   margin: 15px auto;
 }
 
-.service-item button{
+.experience-item button{
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -73,24 +73,24 @@
   color: #bbb;
 }
 
-.service-item button i{
+.experience-item button i{
   padding-left: 4px;
 }
 
-.service-item button:hover{
+.experience-item button:hover{
   color: var(--color-muted-sunset);
   transition: 0.4s;
   cursor: pointer;
 }
 
 @media screen and (max-width:1080px){
-  .services{
+  .experiences{
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (max-width:768px){
-  .services{
+  .experiences{
     grid-template-columns: 1fr;
   }
 }

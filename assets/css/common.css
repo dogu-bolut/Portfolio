@@ -16,6 +16,10 @@
   --color-bronze-orange: #CC7722;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;

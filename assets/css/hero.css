@@ -21,6 +21,28 @@
   text-align: left;
 }
 
+.left-container button{
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 2px;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  color: var(--color-classic-orange);
+}
+
+.left-container button i{
+  padding-left: 8px;
+}
+
+.left-container button:hover{
+  color: var(--color-dark-orange);
+  transition: 0.4s;
+  cursor: pointer;
+}
+
 .intro{
   font-size: 20px;
   font-weight: 500;
