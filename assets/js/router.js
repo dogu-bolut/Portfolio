@@ -77,6 +77,7 @@ const routes = {
 function safeMountDynamicPage(path) {
   const filePath = routes[path];
   if (!filePath) return;
+  window.scrollTo(0, 0);
 
   const main = document.querySelector('main');
 
@@ -101,8 +102,17 @@ function safeMountDynamicPage(path) {
 
 // Call this only on demand
 function navigateTo(path) {
-  if (!routes[path]) return;
+  const main = document.querySelector('main');
 
+  if (path === '/') {
+    if (main.dataset.original) {
+      main.innerHTML = main.dataset.original;
+    }
+    history.pushState({}, '', '/');
+    return;
+  }
+
+  // Continue with normal routing
   safeMountDynamicPage(path);
   history.pushState({}, '', path);
 }
@@ -120,10 +130,10 @@ document.addEventListener('click', (e) => {
 // When user clicks browser back/forward buttons
 window.addEventListener('popstate', () => {
   const path = window.location.pathname;
+  const main = document.querySelector('main');
 
-  if (path === '/' && document.querySelector('main').dataset.original) {
-    // Restore homepage
-    document.querySelector('main').innerHTML = document.querySelector('main').dataset.original;
+  if (path === '/' && main.dataset.original) {
+    main.innerHTML = main.dataset.original;
   } else {
     safeMountDynamicPage(path);
   }

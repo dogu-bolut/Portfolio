@@ -20,6 +20,10 @@ header {
   font-weight: 600;
 }
 
+.navbar .logo a{
+  color: #fff;
+}
+
 .navbar ul {
   display: flex;
   list-style: none;
