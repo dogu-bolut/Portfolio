@@ -1,4 +1,4 @@
-.hero-section{
+.welcome-section{
   background-color: #111;
   display: flex;
   justify-content: center;
@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-.hero-container{
+.welcome-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -74,8 +74,9 @@
 }
 
 .social-media i{
-  font-size: 22px;
+  font-size: 26px;
   color: var(--color-pastel-orange);
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .social-media i:hover{
@@ -214,8 +215,20 @@
   }
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @media screen and (max-width:1080px){
-  .hero-container{
+  .welcome-container{
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
@@ -243,7 +256,7 @@
     margin-bottom: 10px;
   }
 
-  .hero-section{
+  .welcome-section{
     height: 110vh;
   }
 
