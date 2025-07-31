@@ -20,7 +20,7 @@ header {
   font-weight: 600;
 }
 
-.navbar .logo a{
+.navbar .logo a {
   color: #fff;
 }
 
@@ -145,7 +145,7 @@ header {
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-.side-menu.open ~ .navbar-overlay {
+.side-menu.open~.navbar-overlay {
   opacity: 0.8;
   visibility: visible;
 }
@@ -162,7 +162,7 @@ header {
 }
 
 @media screen and (max-width:768px) {
-  .fixed-nav{
+  .fixed-nav {
     padding: 0 1.5rem 0 1rem;
   }
 }
@@ -202,4 +202,23 @@ header {
 .show-link {
   visibility: visible;
   z-index: 100;
+}
+
+.mobile-buttons a {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  font-size: 14px;
+  padding: 10px 12px;
+  gap: 6px;
+  /* spacing between icon and text */
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 481px) {
+  .mobile-buttons {
+    display: none;
+  }
 }
