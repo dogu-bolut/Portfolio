@@ -210,8 +210,7 @@ header {
   justify-content: left;
   font-size: 14px;
   padding: 10px 12px;
-  gap: 6px;
-  /* spacing between icon and text */
+  margin-bottom: 10px;
   text-align: left;
   width: 100%;
   box-sizing: border-box;

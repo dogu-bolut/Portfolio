@@ -62,7 +62,7 @@
   margin: 15px auto;
 }
 
-.experience-item .spa-link {
+.spa-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -80,7 +80,7 @@
   overflow: hidden;
 }
 
-.experience-item .spa-link::before {
+.spa-link::before {
   content: "";
   position: absolute;
   width: 160px;
@@ -93,7 +93,7 @@
   transition: top 0.1s, left 0.1s;
 }
 
-.experience-item .spa-link::after {
+.spa-link::after {
   content: "";
   position: absolute;
   top: 0;
@@ -105,21 +105,21 @@
   transition: left 0.6s ease-in-out;
 }
 
-.experience-item .spa-link:hover::after {
+.spa-link:hover::after {
   left: 120%;
 }
 
-.experience-item .spa-link i{
+.spa-link i{
   transition: transform 0.3s ease;
 }
 
-.experience-item .spa-link:hover {
+.spa-link:hover {
   background-color: var(--color-dark-orange);
   transform: scale(1.05);
   box-shadow: 0 8px 24px rgba(255, 140, 0, 0.5);
 }
 
-.experience-item .spa-link:hover i {
+.spa-link:hover i {
   transform: translateX(6px);
 }
 /*.experience-item a{
