@@ -62,7 +62,7 @@
   margin: 15px auto;
 }
 
-.spa-link {
+.experience-item .spa-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -80,7 +80,7 @@
   overflow: hidden;
 }
 
-.spa-link::before {
+.experience-item .spa-link::before {
   content: "";
   position: absolute;
   width: 160px;
@@ -93,7 +93,7 @@
   transition: top 0.1s, left 0.1s;
 }
 
-.spa-link::after {
+.experience-item .spa-link::after {
   content: "";
   position: absolute;
   top: 0;
@@ -105,43 +105,23 @@
   transition: left 0.6s ease-in-out;
 }
 
-.spa-link:hover::after {
+.experience-item .spa-link:hover::after {
   left: 120%;
 }
 
-.spa-link i{
+.experience-item .spa-link i{
   transition: transform 0.3s ease;
 }
 
-.spa-link:hover {
+.experience-item .spa-link:hover {
   background-color: var(--color-dark-orange);
   transform: scale(1.05);
   box-shadow: 0 8px 24px rgba(255, 140, 0, 0.5);
 }
 
-.spa-link:hover i {
+.experience-item .spa-link:hover i {
   transform: translateX(6px);
 }
-/*.experience-item a{
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  
-  background-color: transparent;
-  border: none;
-  position: relative;
-  color: #bbb;
-}
-
-.experience-item a i{
-  padding-left: 4px;
-}
-
-.experience-item a:hover{
-  color: var(--color-muted-sunset);
-  transition: 0.4s;
-  cursor: pointer;
-}*/
 
 @media screen and (max-width:1080px){
   .experiences{
