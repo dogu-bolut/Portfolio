@@ -1,4 +1,4 @@
-.welcome-section{
+.welcome-section {
   background-color: #111;
   display: flex;
   justify-content: center;
@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-.welcome-container{
+.welcome-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -21,7 +21,7 @@
   text-align: left;
 }
 
-.left-container button{
+.left-container button {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -33,79 +33,85 @@
   color: var(--color-classic-orange);
 }
 
-.left-container button i{
+.left-container button i {
   padding-left: 8px;
 }
 
-.left-container button:hover{
+.left-container button:hover {
   color: var(--color-dark-orange);
   transition: 0.4s;
   cursor: pointer;
 }
 
-.intro{
+.intro {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 20px;
   color: rgb(177, 177, 177);
 }
 
-.intro span{
+.intro span {
   color: var(--color-pastel-orange);
 }
 
-.left-container h2{
+.left-container h2 {
   font-size: 40px;
   color: #fff;
 }
 
-.left-container p{
+.left-container p {
   font-size: 16px;
   line-height: 1.6;
   margin: 30px 0px;
   color: rgb(143, 143, 143);
 }
 
-.social-media{
+.social-media {
   display: flex;
   align-self: start;
   gap: 19px;
   margin: 10px 0px;
 }
 
-.social-media i{
+.social-media i {
   font-size: 26px;
   color: var(--color-pastel-orange);
   animation: pulse 2s ease-in-out infinite;
 }
 
-.social-media i:hover{
+.social-media i:hover {
   color: var(--color-bronze-orange);
   cursor: pointer;
 }
 
-.buttons{
+.buttons {
   display: flex;
   justify-content: start;
   gap: 20px;
   margin: 40px 1px;
 }
 
-.right-container{
+.right-container {
   text-align: center;
 }
 
-.profile img{
+.right-container video {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.profile img {
   width: 380px;
   padding-bottom: 50px;
   /* background-image: linear-gradient(to top, #4b4b4b 0%, #111 80%); */
 }
 
-.features{
+.features {
   position: relative;
 }
 
-.features div{
+.features div {
   position: absolute;
   z-index: 9999;
   display: flex;
@@ -115,102 +121,105 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.features i{
+.features i {
   font-size: 30px;
   margin-right: 5px;
 }
 
-.fa-fade{
+.fa-fade {
   animation-name: fade;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
 }
 
-.features .css{
+.features .first {
   top: -140px;
   right: 80%;
   color: #66309a;
 }
 
-.features .css i{
+.features .first i {
   animation-duration: 4s;
 }
 
-.features .js{
+.features .second {
   top: -120px;
   right: 10%;
   color: #f7e025;
 }
 
-.features .js i{
+.features .second i {
   animation-duration: 3s;
 }
 
-.features .html{
+.features .third {
   top: -300px;
   right: 85%;
-  color:#f0652c;
+  color: #f0652c;
 }
 
-.features .html i{
+.features .third i {
   animation-duration: 7s;
 }
 
-.features .nodejs{
+.features .fourth {
   top: -350px;
   right: 80px;
   color: #3e863d;
 }
 
-.features .nodejs i{
+.features .fourth i {
   animation-duration: 4s;
 }
 
-.features .angular{
+.features .fifth {
   top: -450px;
   right: 70%;
   color: #c1132d;
 }
 
-.features .angular i{
+.features .fifth i {
   animation-duration: 6s;
 }
 
-.features .unity{
+.features .sixth {
   top: 0px;
   right: 30%;
   color: #b1b1b1;
 }
 
-.features .unity i{
+.features .sixth i {
   animation-duration: 8s;
 }
 
-.features .database{
+.features .seventh {
   top: -30px;
   right: 55%;
   color: #00558b;
 }
 
-.features .database i{
+.features .seventh i {
   animation-duration: 5s;
 }
 
-.features .linux{
+.features .eighth {
   top: -480px;
   right: 45%;
   color: #c6c6c6;
 }
 
-.features .linux i{
+.features .eighth i {
   animation-duration: 9s;
 }
 
-@keyframes fade{
-  0%, 100% {
+@keyframes fade {
+
+  0%,
+  100% {
     opacity: 0;
   }
-  50%{
+
+  50% {
     opacity: 1;
   }
 }
@@ -219,52 +228,54 @@
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.15);
   }
+
   100% {
     transform: scale(1);
   }
 }
 
-@media screen and (max-width:1080px){
-  .welcome-container{
+@media screen and (max-width:1080px) {
+  .welcome-container {
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
   }
 
-  .profile img{
+  .profile img {
     width: 300px;
   }
 
-  .left-container h2{
+  .left-container h2 {
     font-size: 30px;
   }
 
-  .features div{
+  .features div {
     display: none;
   }
 }
 
-@media screen and (max-width:768px){
-  .profile img{
+@media screen and (max-width:768px) {
+  .profile img {
     width: 200px;
   }
 
-  .intro{
+  .intro {
     margin-bottom: 10px;
   }
 
-  .welcome-section{
+  .welcome-section {
     height: 110vh;
   }
 
-  .left-container h2{
+  .left-container h2 {
     font-size: 25px;
   }
 
-  .left-container p{
+  .left-container p {
     font-size: 14px;
   }
 }
