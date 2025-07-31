@@ -80,3 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Close side menu when a link inside it is clicked
+document.getElementById('sideMenu').addEventListener('click', (e) => {
+  const clickedLink = e.target.closest('a');
+  if (clickedLink) {
+    toggleMenu();
+  }
+});
