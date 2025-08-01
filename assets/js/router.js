@@ -100,7 +100,7 @@ const navbarConfigs = {
   '/games': [
     { text: 'Home', href: '/' },
     { text: 'Games', href: '#games' },
-    { text: 'My Games', href: '#my-games' },
+    { text: 'Policies', href: '#privacy-policy' },
     { text: 'Feedback', href: '#feedback' },
   ],
   '/web': [

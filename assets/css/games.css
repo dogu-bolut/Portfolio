@@ -27,6 +27,12 @@
   border-radius: 10px;
   position: relative;
   background-color: #111;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-item:hover {
+  transform: translateY(-16px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .game-item .indicator {
@@ -98,6 +104,84 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.privacy-list {
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.policy-card {
+  background: #1c1c1c;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  border-left: 4px solid var(--color-dark-orange);
+  transition: transform 0.2s ease;
+}
+
+.policy-card:hover {
+  transform: translateY(-4px);
+}
+
+.policy-card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f9f9f9;
+}
+
+.policy-card a {
+  margin-top: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.policy-card a:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .privacy-policy-section {
+    height: auto;
+    padding: 20px 16px;
+    align-items: flex-start;
+  }
+
+  .privacy-policy-section > .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .privacy-list {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 16px;
+  }
+
+  .policy-card {
+    padding: 16px;
+    border-left-width: 3px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .policy-card h3 {
+    font-size: 18px;
+  }
+
+  .policy-card a {
+    margin-top: 12px;
+    font-size: 14px;
+    display: inline-block;
+  }
 }
 
 .spa-link {
