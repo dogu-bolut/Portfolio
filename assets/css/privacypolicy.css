@@ -113,30 +113,3 @@ body{
     font-size: 16px;
   }
 }
-
-
-.back-button-container {
-  margin-bottom: 20px;
-}
-
-.btn-back {
-  background-color: transparent;
-  border: 2px solid var(--color-dark-orange);
-  color: var(--color-dark-orange);
-  font-weight: 600;
-  font-size: 14px;
-  padding: 6px 14px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.btn-back:hover,
-.btn-back:focus {
-  background-color: var(--color-dark-orange);
-  color: #fff;
-  outline: none;
-}

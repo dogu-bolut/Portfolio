@@ -124,13 +124,3 @@ function updateNavbar(path) {
     sideMenu.appendChild(li2);
   });
 }
-
-//check if there history if not route to home
-document.getElementById('btnBack').addEventListener('click', () => {
-  if (window.history.length > 1) {
-    window.history.back();
-  } else {
-    history.pushState({}, '', '/');
-    safeMountDynamicPage(normalizePath('/'));
-  }
-});
