@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Click events for in-page nav buttons
 document.addEventListener('click', (e) => {
-  const link = e.target.closest('.spa-link');
+  const link = e.target.closest('.cta');
   if (!link) return;
 
   e.preventDefault();
@@ -117,7 +117,7 @@ function updateNavbar(path) {
   // Re-add links from config
   config.forEach(link => {
     const li = document.createElement('li');
-    li.innerHTML = `<a href="${link.href}" class="${link.href.startsWith('/') ? 'spa-link' : 'scroll-link'}">${link.text}</a>`;
+    li.innerHTML = `<a href="${link.href}" class="${link.href.startsWith('/') ? 'cta' : 'scroll-link'}">${link.text}</a>`;
     linksContainer.appendChild(li);
 
     const li2 = li.cloneNode(true);
