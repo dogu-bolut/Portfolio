@@ -99,7 +99,7 @@ const navbarConfigs = {
   ],
   '/games': [
     { text: 'Home', href: '/' },
-    { text: 'Genres', href: '#genres' },
+    { text: 'Games', href: '#games' },
     { text: 'My Games', href: '#my-games' },
     { text: 'Feedback', href: '#feedback' },
   ],
