@@ -57,13 +57,13 @@ function navigateTo(path) {
   }
 
   // Continue with normal routing
-  safeMountDynamicPage(normalizePath(path));
+  safeMountDynamicPage(path);
   history.pushState({}, '', path);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname;
-  safeMountDynamicPage(normalizePath(currentPath)); // your own routing logic
+  safeMountDynamicPage(currentPath); // your own routing logic
 });
 
 // Click events for in-page nav buttons
@@ -84,7 +84,7 @@ window.addEventListener('popstate', () => {
   if (path === '/' && main.dataset.original) {
     main.innerHTML = main.dataset.original;
   } else {
-    safeMountDynamicPage(normalizePath(path));
+    safeMountDynamicPage(path);
   }
 });
 
