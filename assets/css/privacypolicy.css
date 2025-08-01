@@ -2,10 +2,6 @@ body{
   background-color: #222;
 }
 
-.preload {
-  visibility: hidden;
-}
-
 .privacy-policy {
   max-width: 800px;
   margin: 60px auto;

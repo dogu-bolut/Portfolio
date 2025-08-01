@@ -65,10 +65,6 @@ link.addEventListener('click', (e) => {
 });
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.remove('preload');
-});
-
 // Learn More Links
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('.spa-link');

@@ -124,3 +124,14 @@ function updateNavbar(path) {
     sideMenu.appendChild(li2);
   });
 }
+
+main.style.visibility = 'hidden'; // hide before inject
+
+fetch(filePath)
+  .then(res => res.text())
+  .then(html => {
+    main.innerHTML = `<div id="main-content">${html}</div>`;
+    requestAnimationFrame(() => {
+      main.style.visibility = 'visible'; // show after next paint
+    });
+  });
