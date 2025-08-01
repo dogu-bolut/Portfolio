@@ -114,7 +114,7 @@ body{
   }
 }
 
-.link-back-to-games {
+.btn-back-to-games {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -131,16 +131,16 @@ body{
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
-.link-back-to-games i {
+.btn-back-to-games i {
   transition: transform 0.2s ease;
 }
 
-.link-back-to-games:hover {
+.btn-back-to-games:hover {
   background-color: var(--color-dark-orange);
   color: white !important;
-  border-color: ar(--color-dark-orange);
+  border-color: var(--color-dark-orange);
 }
 
-.link-back-to-games:hover i {
+.btn-back-to-games:hover i {
   transform: translateX(4px);
 }
