@@ -20,6 +20,9 @@ function safeMountDynamicPage(path) {
     main.dataset.original = main.innerHTML;
   }
 
+  main.style.visibility = 'hidden';
+  main.style.minHeight = '100vh'; // optional: avoid content shift
+
   fetch(filePath)
     .then(res => {
       if (!res.ok) throw new Error('Page not found');
@@ -27,10 +30,15 @@ function safeMountDynamicPage(path) {
     })
     .then(html => {
       main.innerHTML = `<div id="main-content">${html}</div>`;
-      updateNavbar(path);
+       requestAnimationFrame(() => {
+        main.style.visibility = 'visible';
+        main.style.minHeight = ''; // reset if you set it
+        updateNavbar(path);
+       });
     })
     .catch(err => {
       main.innerHTML = '<h2>404 - Page Not Found</h2>';
+      main.style.visibility = 'visible';
       console.error(err);
     });
 }
