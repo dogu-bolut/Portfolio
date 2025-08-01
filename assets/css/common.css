@@ -37,47 +37,6 @@ a {
   padding: 0px 2rem;
 }
 
-.btn-primary {
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 0.3em;
-  border: none;
-  cursor: pointer;
-  color: white;
-  border-radius: 2px;
-  background-color: var(--color-dark-orange);
-  padding: 8px 20px;
-  display: inline-block;
-  transition: .5s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.btn-primary:hover {
-  color: var(--color-dark-orange);
-}
-
-.btn-primary:hover::after {
-  transform: skewX(45deg) scaleX(1);
-}
-
-.btn-primary::after {
-  position: absolute;
-  content: "";
-  display: block;
-  left: 8%;
-  right: -20%;
-  top: -4%;
-  height: 150%;
-  width: 150%;
-  border-radius: 2px;
-  background-color: #fff;
-  transform: skewX(45deg) scaleX(0);
-  z-index: -1;
-  transition: all .5s ease-in-out 0s;
-}
-
 .explore-btn{
   background-color: transparent;
   outline: none;

@@ -2,7 +2,10 @@ const routes = {
   '/games': 'assets/pages/games.html',
   '/web': 'assets/pages/web.html',
   '/mobile': 'assets/pages/mobile.html',
+  '/games/whatsInMyBag' : 'assets/pages/privacyPolicies/whatsInMyBag.html'
 };
+
+const normalizePath = (path) => path.endsWith("/") && path.length > 1 ? path.slice(0, -1) : path;
 
 // only mount this if user navigates to a valid sub-route
 function safeMountDynamicPage(path) {
@@ -46,9 +49,14 @@ function navigateTo(path) {
   }
 
   // Continue with normal routing
-  safeMountDynamicPage(path);
+  safeMountDynamicPage(normalizePath(path));
   history.pushState({}, '', path);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname;
+  safeMountDynamicPage(normalizePath(currentPath)); // your own routing logic
+});
 
 // Click events for in-page nav buttons
 document.addEventListener('click', (e) => {
@@ -68,7 +76,7 @@ window.addEventListener('popstate', () => {
   if (path === '/' && main.dataset.original) {
     main.innerHTML = main.dataset.original;
   } else {
-    safeMountDynamicPage(path);
+    safeMountDynamicPage(normalizePath(path));
   }
 });
 
