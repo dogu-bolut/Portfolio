@@ -2,7 +2,6 @@ const routes = {
   '/games': 'assets/pages/games.html',
   '/web': 'assets/pages/web.html',
   '/mobile': 'assets/pages/mobile.html',
-  '/games/whatsinmybag' : 'assets/pages/whatsinmybag.html'
 };
 
 const normalizePath = (path) => path.endsWith("/") && path.length > 1 ? path.slice(0, -1) : path;
