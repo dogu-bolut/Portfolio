@@ -2,7 +2,7 @@ const routes = {
   '/games': 'assets/pages/games.html',
   '/web': 'assets/pages/web.html',
   '/mobile': 'assets/pages/mobile.html',
-  '/games/whatsinmybag' : 'assets/pages/privacyPolicies/whatsInMyBag.html'
+  '/games/whatsinmybag' : 'assets/pages/privacyPolicies/whatsinmybag.html'
 };
 
 const normalizePath = (path) => path.endsWith("/") && path.length > 1 ? path.slice(0, -1) : path;
@@ -124,3 +124,13 @@ function updateNavbar(path) {
     sideMenu.appendChild(li2);
   });
 }
+
+//check if there history if not route to home
+document.getElementById('btnBack').addEventListener('click', () => {
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    history.pushState({}, '', '/');
+    safeMountDynamicPage(normalizePath('/'));
+  }
+});
