@@ -74,22 +74,24 @@
   margin: 15px auto;
 }
 
-@media screen and (max-width:1080px){
-  .games-section{
+@media screen and (max-width:1080px) {
+  .games-section {
     height: auto;
     padding-bottom: 20px;
   }
-  .games{
+
+  .games {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (max-width:768px){
-  .games-section{
+@media screen and (max-width:768px) {
+  .games-section {
     height: auto;
     padding-bottom: 20px;
   }
-  .games{
+
+  .games {
     grid-template-columns: 1fr;
   }
 }
@@ -153,7 +155,7 @@
     align-items: flex-start;
   }
 
-  .privacy-policy-section > .container {
+  .privacy-policy-section>.container {
     width: 100%;
     max-width: 100%;
     padding: 0 16px;
