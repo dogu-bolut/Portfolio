@@ -1,7 +1,12 @@
 .contact-section{
   background-color: #000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 3rem 0rem;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  box-sizing: border-box;
 }
 
 .contact-container{
