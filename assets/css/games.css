@@ -93,6 +93,10 @@
   box-sizing: border-box;
 }
 
+.privacy-policy-section>.container {
+    width: 80%;
+  }
+
 .privacy-list {
   display: grid;
   gap: 24px;
