@@ -29,7 +29,7 @@
   position: relative;
   background-color: #111;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
+
 }
 
 .game-item:hover {
@@ -69,14 +69,18 @@
 }
 
 .game-item a {
-  display:flexbox;
-  margin-top: 10px;
+  display: inline-flex;
+  margin-top: 1rem;
   margin-right: 8px;
   padding: 4px 8px;
 }
 
+.game-item a h2 {
+  margin: 0;
+}
+
 @media screen and (max-width:1080px) {
- .games {
+  .games {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -233,7 +237,7 @@
 .stack-item:hover {
   transform: scale(1.01);
   background-color: #111;
-  cursor:default;
+  cursor: default;
 }
 
 .badge {
@@ -262,7 +266,8 @@
 
 @media (max-width: 768px) {
   .stack-grid {
-    grid-template-columns: 1fr; /* single column */
+    grid-template-columns: 1fr;
+    /* single column */
     gap: 16px;
     max-width: 90%;
     margin-left: auto;
