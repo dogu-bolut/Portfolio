@@ -244,7 +244,7 @@
   }
   50% {
     transform: scale(1.15);
-    filter: brightness(1.1) saturate(20) hue-rotate(-20deg);
+    filter: brightness(1.1) saturate(10) hue-rotate(-20deg);
   }
 }
 
