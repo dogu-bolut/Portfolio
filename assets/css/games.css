@@ -68,6 +68,13 @@
   margin: 15px auto;
 }
 
+.game-item a {
+  display:flexbox;
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 4px 8px;
+}
+
 @media screen and (max-width:1080px) {
  .games {
     grid-template-columns: 1fr 1fr;
@@ -80,7 +87,7 @@
   }
 }
 
-.privacy-policy-section {
+/*.privacy-policy-section {
   background-color: #111;
   display: flex;
   justify-content: center;
@@ -186,7 +193,7 @@
     font-size: 14px;
     display: inline-block;
   }
-}
+}*/
 
 .tech-stack-section {
   background-color: #000;
@@ -218,6 +225,9 @@
   color: #bbb;
   border: 1px solid #444;
   transition: transform 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .stack-item:hover {
@@ -226,9 +236,28 @@
   cursor:default;
 }
 
-.stack-item.advanced {
-  background: linear-gradient(135deg, #1c1c1c, #2a1d00);
-  border: 1px solid #ff6b00;
+.badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.badge.advanced {
+  background-color: #ff6b00;
+  color: white;
+}
+
+.badge.intermediate {
+  background-color: #444;
+  color: #ccc;
+}
+
+.badge.beginner {
+  background-color: #222;
+  color: #888;
 }
 
 @media (max-width: 768px) {
