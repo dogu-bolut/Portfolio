@@ -101,11 +101,12 @@ const navbarConfigs = {
     { text: 'Home', href: '/' },
     { text: 'Games', href: '#games' },
     { text: 'Tech Stack', href: '#tech-stack' },
+    { text: 'Contact', href: '#contact' },
   ],
   '/web': [
     { text: 'Home', href: '/' },
     { text: 'Web Projects', href: '#web-projects' },
-    { text: 'Tech Stack', href: '#tech' },
+    { text: 'Tech Stack', href: '#tech-stack' },
     { text: 'Contact', href: '#contact' },
   ],
 };
