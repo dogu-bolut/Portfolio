@@ -211,74 +211,71 @@
   box-sizing: border-box;
 }
 
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: start;
+  align-items: start;
+}
+
+.stack-group {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.stack-group h3 {
+  color: var(--color-pastel-orange);
+  font-weight: 700;
+  font-size: 1.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding: 0.25rem;
+  border: 2px solid var(--color-pastel-orange);
+  border-radius: 10px;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
 .stack-grid {
   display: grid;
-  gap: 20px;
-  margin-top: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  max-width: 1300px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem 2rem;
+  align-items: center;
 }
 
 .stack-item {
   background-color: #1c1c1c;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1.1rem 1.3rem;
+  border-radius: 10px;
   font-weight: 600;
   color: #bbb;
   border: 1px solid #444;
-  transition: transform 0.2s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.stack-item:hover {
-  transform: scale(1.01);
-  background-color: #111;
-  cursor: default;
-}
-
-.badge {
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.3rem 0.6rem;
-  border-radius: 12px;
-  white-space: nowrap;
-  margin-left: 1rem;
-}
-
-.badge.advanced {
-  background-color: #ff6b00;
-  color: white;
-}
-
-.badge.intermediate {
-  background-color: #444;
-  color: #ccc;
-}
-
-.badge.beginner {
-  background-color: #222;
-  color: #888;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
 }
 
 @media (max-width: 768px) {
+  .stack-group h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
   .stack-grid {
     grid-template-columns: 1fr;
-    /* single column */
-    gap: 16px;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 1rem 1rem;
   }
 
   .stack-item {
-    padding: 0.75rem;
-    font-size: 16px;
+    padding: 1rem;
   }
 }
+
 
 .spa-link {
   display: inline-flex;
