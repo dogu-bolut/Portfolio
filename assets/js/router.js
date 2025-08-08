@@ -30,6 +30,7 @@ function safeMountDynamicPage(path) {
     .then(html => {
       main.innerHTML = `<div id="main-content">${html}</div>`;
        requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
         main.style.visibility = 'visible';
         main.style.minHeight = ''; // reset if you set it
         updateNavbar(path);
