@@ -330,6 +330,11 @@
   .left-container p {
     font-size: 14px;
   }
+  
+  .flip-card {
+    width: 250px;
+    height: 450px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -340,5 +345,9 @@
 
   .buttons {
     display: none;
+  }
+  .flip-card {
+    width: 200px;
+    height: 400px;
   }
 }
