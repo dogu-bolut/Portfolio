@@ -138,11 +138,11 @@ const flipCardChecker = setInterval(() => {
 }, 300); */
 
 const screenshots = [
-    'assets/img/bountyhunter.jpg',
-    'assets/img/corridor.png',
-    'assets/img/angular.png',
-    'assets/img/html.png',
-    'assets/img/postgre.png'
+    'assets/img/baw.jpg',
+    'assets/img/saglikpaketi.jpg',
+    'assets/img/moviereview.jpg',
+    'assets/img/QA.jpg',
+    'assets/img/dogbreedlist.jpg'
   ];
 
 let currentIndex = 0;

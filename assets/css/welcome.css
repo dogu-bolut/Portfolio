@@ -116,8 +116,8 @@
 
 .flip-card {
   width: 300px;
-  height: 400px;
-  perspective: 1000px;
+  height: 550px;
+  perspective: 600px;
   cursor: default;
   margin: auto;
 }
@@ -136,7 +136,7 @@
   height: 100%;
   backface-visibility: hidden;
   filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.3)); 
-  border-radius: 12px;
+  border-radius: 5px;
   transition: filter 0.3s ease;
   overflow: hidden;
 }
@@ -144,7 +144,7 @@
 .flip-front img, .flip-back img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .flip-back {
