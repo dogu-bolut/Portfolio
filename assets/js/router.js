@@ -94,8 +94,6 @@ const navbarConfigs = {
     { text: 'Home', href: '#home' },
     { text: 'Experiences', href: '#experiences' },
     { text: 'Certificates', href: '#certificates' },
-    { text: 'Skills', href: '#skills' },
-    { text: 'Projects', href: '#projects' },
     { text: 'Contacts', href: '#contact' },
   ],
   '/games': [

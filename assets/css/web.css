@@ -1,102 +1,6 @@
-.games-section {
+.project-section {
   background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding-bottom: 2rem;
-  padding-top: 3rem;
-  box-sizing: border-box;
-}
-
-.games-container {
-  margin-top: 3rem;
-}
-
-.games {
-  display: grid;
-  gap: 20px;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.game-item {
-  padding: 1rem 1rem;
-  margin: 0.5rem 0.5rem;
-  border: 1px solid #2b2a2a;
-  border-radius: 10px;
   position: relative;
-  background-color: #111;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-}
-
-.game-item:hover {
-  transform: translateY(-16px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.game-item img {
-  display: block;
-  margin: 0 auto;
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  justify-content: center;
-  align-items: center;
-}
-
-.game-item h2 {
-  color: #fff;
-  font-size: 17px;
-  letter-spacing: 1px;
-  margin: 15px auto;
-}
-
-.game-item h2:hover {
-  color: var(--color-dark-orange);
-  transition: 0.8s;
-  cursor: pointer;
-}
-
-.game-item p {
-  color: #999;
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin: 15px auto;
-}
-
-.game-item a {
-  display: inline-flex;
-  margin-top: 1rem;
-  margin-right: 8px;
-  padding: 4px 8px;
-}
-
-.game-item a h2 {
-  margin: 0;
-}
-
-@media screen and (max-width:1080px) {
-  .games {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width:768px) {
-  .games {
-    grid-template-columns: 1fr;
-  }
-}
-
-/*.privacy-policy-section {
-  background-color: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: auto;
   margin: 0;
@@ -105,100 +9,79 @@
   box-sizing: border-box;
 }
 
-.privacy-policy-section>.container {
-    width: 80%;
-  }
+.project-container {
+  padding-top: 3rem;
+}
 
-.privacy-list {
+.projects {
   display: grid;
-  gap: 24px;
-  margin-top: 32px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.policy-card {
-  background: #1c1c1c;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  padding: 24px;
-  border-left: 4px solid var(--color-dark-orange);
-  transition: transform 0.2s ease;
+.project-item {
+  position: relative;
+  background-color: #0a0a0a;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #999;
 }
 
-.policy-card:hover {
-  transform: translateY(-4px);
+.project-item img {
+  padding: 20px;
+  width: 50%;
+  overflow: hidden;
+  position: relative;
 }
 
-.policy-card h3 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: #f9f9f9;
-}
-
-.policy-card a {
-  margin-top: 16px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.policy-card a:hover {
+.project-item img:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-in-out;
   cursor: pointer;
 }
 
-@media screen and (max-width:1080px) {
-  .privacy-policy-section>.container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 24px;
-  }
+.project-details {
+  padding: 1rem;
+}
 
-  .privacy-list {
+.tags {
+  position: absolute;
+  text-align: end;
+  top: 5px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.project-details h2 {
+  color: #fff;
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.project-details p {
+  color: #888;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1080px) {
+  .projects {
     grid-template-columns: 1fr 1fr;
-    margin-left: 0;
-    margin-right: 0;
-    gap: 24px;
   }
 }
 
-@media (max-width: 768px) {
-  .privacy-policy-section {
-    align-items: flex-start;
-  }
-
-  .privacy-policy-section>.container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 16px;
-  }
-
-  .privacy-list {
+@media screen and (max-width: 768px) {
+  .projects {
     grid-template-columns: 1fr;
-    margin-left: 0;
-    margin-right: 0;
-    gap: 16px;
   }
-
-  .policy-card {
-    padding: 16px;
-    border-left-width: 3px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .policy-card h3 {
-    font-size: 18px;
-  }
-
-  .policy-card a {
-    margin-top: 12px;
-    font-size: 14px;
-    display: inline-block;
-  }
-}*/
+}
 
 .tech-stack-section {
   background-color: #111;
