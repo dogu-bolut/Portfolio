@@ -19,6 +19,20 @@
 
 .left-container {
   text-align: left;
+  opacity: 0;
+  /* Start hidden */
+  transform: translateX(-50px);
+  /* Shifted left */
+  animation: slideInLeft 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+  /* Optional delay */
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .left-container button {
@@ -114,56 +128,150 @@
   letter-spacing: 0.5px;
 }
 
-.flip-card {
+.light-rays-container {
+  position: relative;
   width: 300px;
   height: 550px;
-  perspective: 600px;
-  cursor: default;
   margin: auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.7));
 }
 
-.flip-card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform 0.8s ease;
-  transform-style: preserve-3d;
-}
-
-.flip-front, .flip-back {
+/* Base styles for all flare sets */
+.flare-set {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
-  filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.3)); 
-  border-radius: 5px;
-  transition: filter 0.3s ease;
-  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: fadeCycle 24s linear infinite;
 }
 
-.flip-front img, .flip-back img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+/* Stagger the fade animation delay for sets */
+.flare-set.set1 {
+  animation-delay: 0s;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-.flip-back {
-  transform: rotateY(180deg);
+.flare-set.set2 {
+  animation-delay: 8s;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-@keyframes floatBlob {
+.flare-set.set3 {
+  animation-delay: 16s;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Lens flare base */
+.lens-flare {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(8px);
+  animation: pulseFlare 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* Light rays base */
+.light-ray {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 3px;
+  filter: blur(2px);
+  transform-origin: center;
+  animation: rotateRay 8s linear infinite;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* Rays rotate with delays */
+.ray1 {
+  transform: rotate(0deg);
+  animation-delay: 0s;
+}
+.ray2 {
+  transform: rotate(120deg);
+  animation-delay: 2.5s;
+}
+.ray3 {
+  transform: rotate(240deg);
+  animation-delay: 5s;
+}
+
+/* Colors for each set */
+
+.set1 .lens-flare {
+  background: radial-gradient(circle, rgba(255, 165, 0, 0.7) 0%, transparent 70%);
+}
+.set1 .light-ray {
+  background: linear-gradient(90deg, transparent, rgba(255, 165, 0, 0.5), transparent);
+}
+
+.set2 .lens-flare {
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.7) 0%, transparent 70%);
+}
+.set2 .light-ray {
+  background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.5), transparent);
+}
+
+.set3 .lens-flare {
+  background: radial-gradient(circle, rgba(0, 191, 255, 0.7) 0%, transparent 70%);
+}
+.set3 .light-ray {
+  background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.5), transparent);
+}
+
+/* Animations */
+
+@keyframes pulseFlare {
   0%, 100% {
-    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+    filter: blur(8px);
   }
   50% {
-    transform: translate(20px, -30px) scale(1.1);
+    opacity: 1;
+    filter: blur(12px);
+  }
+}
+
+@keyframes rotateRay {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeCycle {
+  0%, 33.33% {
+    opacity: 1;
+  }
+  55%, 100% {
+    opacity: 0;
   }
 }
 
 .profile img {
   width: 380px;
   padding-bottom: 50px;
-  /* background-image: linear-gradient(to top, #4b4b4b 0%, #111 80%); */
 }
 
 .features {
@@ -284,10 +392,13 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     filter: brightness(1) saturate(1) hue-rotate(0deg);
   }
+
   50% {
     transform: scale(1.15);
     filter: brightness(1.1) saturate(3) hue-rotate(-20deg);
@@ -330,7 +441,7 @@
   .left-container p {
     font-size: 14px;
   }
-  
+
   .flip-card {
     width: 250px;
     height: 450px;
@@ -346,6 +457,7 @@
   .buttons {
     display: none;
   }
+
   .flip-card {
     width: 200px;
     height: 400px;
