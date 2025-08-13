@@ -147,7 +147,7 @@
 .carousel-track img {
   width: 100%;
   flex-shrink: 0;
-  opacity: 0.8;
+  opacity: 0.85;
   z-index: 1;
   border-radius: 1rem;
 }
@@ -339,7 +339,6 @@
 
   .carousel-track img {
     border-radius: 0.5rem;
-    opacity: 0.7;
   }
 }
 
