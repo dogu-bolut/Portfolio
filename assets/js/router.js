@@ -29,12 +29,15 @@ function safeMountDynamicPage(path) {
     })
     .then(html => {
       main.innerHTML = `<div id="main-content">${html}</div>`;
-       requestAnimationFrame(() => {
+      if (path === '/web') {
+        initCarousel();
+      }
+      requestAnimationFrame(() => {
         window.scrollTo(0, 0);
         main.style.visibility = 'visible';
         main.style.minHeight = ''; // reset if you set it
         updateNavbar(path);
-       });
+      });
     })
     .catch(err => {
       main.innerHTML = '<h2>404 - Page Not Found</h2>';
