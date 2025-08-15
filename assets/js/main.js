@@ -89,6 +89,7 @@ document.getElementById('sideMenu').addEventListener('click', (e) => {
   }
 });
 
+// web page screenshot carousel
 function initCarousel() {
   const carousel = document.querySelector('.carousel');
   const track = carousel.querySelector('.carousel-track');
