@@ -321,15 +321,7 @@
   .carousel-track {
     will-change: transform;
   }
-  @supports (-webkit-overflow-scrolling: touch) {
-    .light-rays-container {
-      -webkit-overflow-scrolling: touch;
-      -webkit-transform:translate3d(0,0,0);
-      -webkit-backface-visibility: hidden;
-    }
-  }
 }
-
 
 
 /* Optional: respect reduced motion */
