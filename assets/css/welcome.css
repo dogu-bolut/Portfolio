@@ -307,7 +307,7 @@
 
   .scroll-stage {
     /* controls how long the pinned sequence lasts */
-    height: 200vh; /* adjust to taste: more = longer effect */
+    height: 400vh; /* adjust to taste: more = longer effect */
     position: relative;
   }
 
