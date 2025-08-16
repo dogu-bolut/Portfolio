@@ -162,12 +162,12 @@ function initCarousel() {
       let s;
       if (t <= 0.5) {
         const p = easeOutQuad(t / 0.5);          // 0..1
-        s = 1.0 + p * (1.6 - 1.0);            // 0.92 → 1.12
+        s = 1.15 + p * (2.0 - 1.15);            // 0.92 → 1.12
       } else {
         const p = easeOutQuad((t - 0.5) / 0.5);  // 0..1
-        s = 1.6 - p * (1.6 - 1.0);            // 1.12 → 0.96
+        s = 2.0 - p * (2.0 - 1.0);            // 1.12 → 0.96
       }
-      sticky.style.transform = `scale(${s}) translateZ(0)`; // GPU nudge
+      sticky.style.transform = `translate3d(${translateX}px,0,0) scale(${scale})`; // GPU nudge
 
       ticking = false;
     }
