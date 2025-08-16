@@ -162,10 +162,10 @@ function initCarousel() {
       let s;
       if (t <= 0.5) {
         const p = easeOutQuad(t / 0.5);          // 0..1
-        s = 1.15 + p * (1.7 - 1.15);            // 1.15 → 1.7
+        s = 1.0 + p * (1.3 - 1.0);            // 1.0 → 1.3
       } else {
         const p = easeOutQuad((t - 0.5) / 0.5);  // 0..1
-        s = 1.7 - p * (1.7 - 1.0);            // 1.7 → 1.0
+        s = 1.3 - p * (1.3 - 1.0);            // 1.3 → 1.0
       }
       sticky.style.transform = `scale(${s}) translateZ(0)`; // GPU nudge
 
