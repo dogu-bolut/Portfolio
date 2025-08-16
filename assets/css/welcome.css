@@ -324,8 +324,7 @@
   @supports (-webkit-overflow-scrolling: touch) {
     .light-rays-container {
       backface-visibility: hidden;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
+      -webkit-transform: translate3d(0,0,0);
     }
   }
 }

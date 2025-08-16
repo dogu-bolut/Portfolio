@@ -167,7 +167,7 @@ function initCarousel() {
         const p = easeOutQuad((t - 0.5) / 0.5);  // 0..1
         s = 2.0 - p * (2.0 - 1.0);            // 1.12 → 0.96
       }
-      sticky.style.transform = `translate3d(${translateX}px,0,0) scale(${scale})`; // GPU nudge
+      sticky.style.transform = `scale(${s}) translateZ(0)`; // GPU nudge
 
       ticking = false;
     }
