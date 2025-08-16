@@ -91,39 +91,96 @@ document.getElementById('sideMenu').addEventListener('click', (e) => {
 
 // web page screenshot carousel
 function initCarousel() {
-  const carousel = document.querySelector('.carousel');
-  const track = carousel.querySelector('.carousel-track');
-  let slides = Array.from(track.children);
+  if (window.innerWidth > 768) {
+    const track = document.querySelector(".carousel-track");
+    const slides = Array.from(track.children);
+    if (!slides.length) return;
 
-  if (!slides.length) return;
+    let index = 0;
+    let isTransitioning = false;
 
-  // Clone first slide and append to the end
-  const firstClone = slides[0].cloneNode(true);
-  track.appendChild(firstClone);
+    // Clone first slide to make infinite loop seamless
+    const firstClone = slides[0].cloneNode(true);
+    track.appendChild(firstClone);
 
-  slides = Array.from(track.children);
-  let index = 0;
-  let isTransitioning = false;
+    const allSlides = Array.from(track.children);
 
-  function goToSlide(newIndex) {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    track.style.transition = "transform 0.5s ease";
-    track.style.transform = `translateX(-${newIndex * 100}%)`;
-    index = newIndex;
+    function goToSlide(newIndex) {
+      if (isTransitioning) return;
+      isTransitioning = true;
 
-    track.addEventListener("transitionend", () => {
-      if (index === slides.length - 1) {
-        // Jump to real first slide instantly
-        track.style.transition = "none";
-        track.style.transform = "translateX(0)";
-        index = 0;
-      }
-      isTransitioning = false;
-    }, { once: true });
+      track.style.transition = "transform 0.5s ease";
+      track.style.transform = `translateX(-${newIndex * 100}%)`;
+      index = newIndex;
+
+      track.addEventListener(
+        "transitionend",
+        () => {
+          if (index === allSlides.length - 1) {
+            // Jump back to first slide without animation
+            track.style.transition = "none";
+            track.style.transform = "translateX(0)";
+            index = 0;
+          }
+          isTransitioning = false;
+        },
+        { once: true }
+      );
+    }
+
+    // Auto-slide every 3 seconds
+    setInterval(() => {
+      goToSlide(index + 1);
+    }, 3000);
   }
+  else{
+    const stage   = document.querySelector(".scroll-stage") || document.querySelector(".right-container");
+    const sticky  = document.querySelector(".light-rays-container");
+    const track   = document.querySelector(".carousel-track");
+    const slides  = track ? Array.from(track.children) : [];
 
-  setInterval(() => {
-    goToSlide(index + 1);
-  }, 3000);
+    if (!stage || !sticky || !track || !slides.length) return;
+
+    let ticking = false;
+
+    const easeOutQuad = (x) => x * (2 - x); // gentle easing
+
+    function apply() {
+      const rect = stage.getBoundingClientRect();
+      const vh   = window.innerHeight;
+
+      // total scrollable distance while sticky is pinned inside the stage
+      const total = Math.max(rect.height - vh, 1);
+      const passed = Math.min(Math.max(-rect.top, 0), total);
+      const t = passed / total; // 0..1
+
+      // Horizontal progress across all images
+      const maxTranslate = -(track.scrollWidth - sticky.clientWidth);
+      track.style.transform = `translateX(${maxTranslate * t}px)`;
+
+      // Scale up (0 → 0.5), then down (0.5 → 1)
+      let s;
+      if (t <= 0.5) {
+        const p = easeOutQuad(t / 0.5);          // 0..1
+        s = 1.15 + p * (2.0 - 1.15);            // 0.92 → 1.12
+      } else {
+        const p = easeOutQuad((t - 0.5) / 0.5);  // 0..1
+        s = 2.0 - p * (2.0 - 1.0);            // 1.12 → 0.96
+      }
+      sticky.style.transform = `scale(${s}) translateZ(0)`; // GPU nudge
+
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(apply);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    apply(); // initial paint
+  }
 }
