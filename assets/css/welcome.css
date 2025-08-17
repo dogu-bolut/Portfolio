@@ -128,230 +128,76 @@
   letter-spacing: 0.5px;
 }
 
-.light-rays-container {
-  position: relative;
-  width: 300px;
-  height: 550px;
-  margin: auto;
-  overflow: visible;
-}
-
-.carousel {
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-track img {
-  width: 100%;
-  flex-shrink: 0;
-  opacity: 0.85;
-  z-index: 1;
-  border-radius: 1rem;
-}
-
-/* Base styles for all flare sets */
-.flare-set {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  mix-blend-mode: screen;
-  animation: fadeCycle 24s linear infinite;
-}
-
-/* Stagger the fade animation delay for sets */
-.flare-set.set1 {
-  animation-delay: 0s;
-  animation-duration: 24s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-.flare-set.set2 {
-  animation-delay: 8s;
-  animation-duration: 24s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-.flare-set.set3 {
-  animation-delay: 16s;
-  animation-duration: 24s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-/* Lens flare base */
-.lens-flare {
-  position: absolute;
-  top: 30%;
-  left: 5%;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  filter: blur(8px);
-  animation: pulseFlare 4s ease-in-out infinite;
-  z-index: 2;
-}
-
-/* Light rays base */
-.light-ray {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 3px;
-  filter: blur(2px);
-  transform-origin: center;
-  animation: rotateRay 8s linear infinite;
-  opacity: 0.7;
-  z-index: 1;
-}
-
-/* Rays rotate with delays */
-.ray1 {
-  transform: rotate(0deg);
-  animation-delay: 0s;
-}
-
-.ray2 {
-  transform: rotate(120deg);
-  animation-delay: 2.5s;
-}
-
-.ray3 {
-  transform: rotate(240deg);
-  animation-delay: 5s;
-}
-
-/* Colors for each set */
-
-.set1 .lens-flare {
-  background: radial-gradient(circle, rgba(255, 165, 0, 0.7) 0%, transparent 70%);
-}
-
-.set1 .light-ray {
-  background: linear-gradient(90deg, transparent, rgba(255, 165, 0, 0.5), transparent);
-}
-
-.set2 .lens-flare {
-  background: radial-gradient(circle, rgba(255, 105, 180, 0.7) 0%, transparent 70%);
-}
-
-.set2 .light-ray {
-  background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.5), transparent);
-}
-
-.set3 .lens-flare {
-  background: radial-gradient(circle, rgba(0, 191, 255, 0.7) 0%, transparent 70%);
-}
-
-.set3 .light-ray {
-  background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.5), transparent);
-}
-
-/* Animations */
-
-@keyframes pulseFlare {
-
-  0%,
-  100% {
-    opacity: 0.7;
-    filter: blur(8px);
-  }
-
-  50% {
-    opacity: 1;
-    filter: blur(12px);
-  }
-}
-
-@keyframes rotateRay {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fadeCycle {
-
-  0%,
-  33.33% {
-    opacity: 1;
-  }
-
-  55%,
-  100% {
-    opacity: 0;
-  }
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .right-container {
-    position: relative;
-  }
-
+@media screen and (min-width:768px) {
   .scroll-stage {
-    /* controls how long the pinned sequence lasts */
-    height: 300vh; /* adjust to taste: more = longer effect */
+    display:none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .scroll-stage{
+    --peek: 25vh;
+    --gap:2vh;
+    --radius:18px;
+    --maxw: 90vw;
+
+    width: 100%;
+    padding-block: 40px;
+  }
+  
+  .image-container img {
+  position: sticky;
+  top: calc(50vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2));
+  width: min(var(--maxw), 90vw);
+  aspect-ratio: 1905 / 909;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  margin-bottom: var(--gap);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 3px solid transparent; /* default border */
+  }
+
+  .image-container img:has(+ img:in-view) {
+    border: 3px solid #ff7f50;   /* cool border color */
+    box-shadow: 0 15px 40px rgba(255,127,80,0.5);
+    transform: scale(1.02);       /* subtle pop */
+  }
+
+  .image-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .light-rays-container {
-    position: sticky;
-    top: 30vh;         /* where it pins on screen */
-    will-change: transform;
-    transform-origin: center center;
+  /* Stacking order */
+  .image-container img:nth-child(n) {
+    z-index: n;
   }
 
-  .carousel-track {
-    will-change: transform;
+  /* Last one leaves a slice of previous visible */
+  .image-container img:last-child {
+    margin-bottom: 1vh;
   }
-}
-
-
-/* Optional: respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .light-rays-container,
-  .carousel-track {
-    transition: none !important;
-    animation: none !important;
+  
+  .image-container img + img {
+    margin-top: calc(30vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2) + var(--peek));
+    filter: brightness(1.05) saturate(1.1);
+    box-shadow: 0 15px 35px rgba(255,127,80,0.3);
+    transition: all 0.4s ease;
   }
-}
-
-@media (max-width: 480px) {
-  .light-rays-container {
-    width: 180px;
-    height: 320px;
+  .image-container img + img + img {
+    margin-top: calc(30vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2) + var(--peek) * 2);
+    filter: brightness(1.03) saturate(1.05);
+    box-shadow: 0 15px 30px rgba(255,127,80,0.2);
+    transition: all 0.4s ease;
   }
-
-  .lens-flare {
-    width: 60px;
-    height: 60px;
-    filter: blur(4px);
-  }
-
-  .light-ray {
-    width: 90%;
-    height: 1.5px;
-  }
-
-  .carousel-track img {
-    border-radius: 0.5rem;
+  .image-container img:first-child {
+    filter: brightness(1.05) saturate(1.1);
+    box-shadow: 0 15px 35px rgba(255,127,80,0.3);
+    transition: all 0.4s ease;
+    top: 39.5vh;
   }
 }
 
