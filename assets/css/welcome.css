@@ -158,12 +158,6 @@
   border: 3px solid transparent; /* default border */
   }
 
-  .image-container img:has(+ img:in-view) {
-    border: 3px solid #ff7f50;   /* cool border color */
-    box-shadow: 0 15px 40px rgba(255,127,80,0.5);
-    transform: scale(1.02);       /* subtle pop */
-  }
-
   .image-container {
     position: relative;
     display: flex;
