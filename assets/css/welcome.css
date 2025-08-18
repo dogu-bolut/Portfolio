@@ -130,32 +130,32 @@
 
 @media screen and (min-width:768px) {
   .scroll-stage {
-    display:none;
+    display: none;
   }
 }
 
 @media screen and (max-width:768px) {
-  .scroll-stage{
+  .scroll-stage {
     --peek: 25vh;
-    --gap:2vh;
-    --radius:18px;
+    --gap: 2vh;
+    --radius: 5px;
     --maxw: 90vw;
 
     width: 100%;
     padding-block: 40px;
   }
-  
+
   .image-container img {
-  position: sticky;
-  top: calc(50vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2));
-  width: min(var(--maxw), 90vw);
-  aspect-ratio: 1905 / 909;
-  object-fit: cover;
-  border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  margin-bottom: var(--gap);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  border: 3px solid transparent; /* default border */
+    position: sticky;
+    top: calc(50vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2));
+    width: min(var(--maxw), 90vw);
+    aspect-ratio: 1905 / 909;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    margin-bottom: var(--gap);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
   }
 
   .image-container {
@@ -174,24 +174,26 @@
   .image-container img:last-child {
     margin-bottom: 1vh;
   }
-  
-  .image-container img + img {
+
+  .image-container img+img {
     margin-top: calc(30vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2) + var(--peek));
     filter: brightness(1.05) saturate(1.1);
-    box-shadow: 0 15px 35px rgba(255,127,80,0.3);
+    box-shadow: 0 15px 35px rgba(255, 127, 80, 0.3);
     transition: all 0.4s ease;
   }
-  .image-container img + img + img {
-    margin-top: calc(30vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2) + var(--peek) * 2);
+
+  .image-container img+img+img {
+    margin-top: calc(20vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2) + var(--peek) * 2);
     filter: brightness(1.03) saturate(1.05);
-    box-shadow: 0 15px 30px rgba(255,127,80,0.2);
+    box-shadow: 0 15px 30px rgba(255, 127, 80, 0.2);
     transition: all 0.4s ease;
   }
+
   .image-container img:first-child {
     filter: brightness(1.05) saturate(1.1);
-    box-shadow: 0 15px 35px rgba(255,127,80,0.3);
+    box-shadow: 0 15px 35px rgba(255, 127, 80, 0.3);
     transition: all 0.4s ease;
-    top: 39.5vh;
+    top: calc(49vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2));
   }
 }
 
