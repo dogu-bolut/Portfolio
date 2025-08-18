@@ -176,14 +176,14 @@
   }
 
   .image-container img+img {
-    margin-top: calc(30vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2) + var(--peek));
+    margin-top: calc(30vh - (min(var(--maxw), 90vw) / (16 / 9) / 2) + var(--peek));
     filter: brightness(1.05) saturate(1.1);
     box-shadow: 0 15px 35px rgba(255, 127, 80, 0.3);
     transition: all 0.4s ease;
   }
 
   .image-container img+img+img {
-    margin-top: calc(20vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2) + var(--peek) * 2);
+    margin-top: calc(20vh - (min(var(--maxw), 90vw) / (16 / 9) / 2) + var(--peek) * 2);
     filter: brightness(1.03) saturate(1.05);
     box-shadow: 0 15px 30px rgba(255, 127, 80, 0.2);
     transition: all 0.4s ease;
@@ -193,7 +193,7 @@
     filter: brightness(1.05) saturate(1.1);
     box-shadow: 0 15px 35px rgba(255, 127, 80, 0.3);
     transition: all 0.4s ease;
-    top: calc(47.5vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2));
+    top: calc(47.5vh - (min(var(--maxw), 90vw) / (16 / 9) / 2));
   }
 }
 
