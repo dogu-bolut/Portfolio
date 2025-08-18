@@ -193,7 +193,7 @@
     filter: brightness(1.05) saturate(1.1);
     box-shadow: 0 15px 35px rgba(255, 127, 80, 0.3);
     transition: all 0.4s ease;
-    top: calc(49vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2));
+    top: calc(47.5vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2));
   }
 }
 
