@@ -147,9 +147,9 @@
 
   .image-container img {
     position: sticky;
-    top: calc(50vh - (min(var(--maxw), 90vw) / (1905 / 909) / 2));
+    top: calc(50vh - (min(var(--maxw), 90vw) / (16 / 9) / 2));
     width: min(var(--maxw), 90vw);
-    aspect-ratio: 1905 / 909;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: var(--radius);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
