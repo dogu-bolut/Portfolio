@@ -1,4 +1,5 @@
 const routes = {
+  '/': 'index.html',
   '/games': 'assets/pages/games.html',
   '/web': 'assets/pages/web.html',
   '/mobile': 'assets/pages/mobile.html',
@@ -8,64 +9,62 @@ const normalizePath = (path) => path.endsWith("/") && path.length > 1 ? path.sli
 
 // only mount this if user navigates to a valid sub-route
 function safeMountDynamicPage(path) {
-  const filePath = routes[path];
-  if (!filePath) return;
+  return new Promise((resolve, reject) => {
+    const filePath = routes[path];
+    if (!filePath) {
+      reject('Page not found');
+      return;
+    }
 
-  const main = document.querySelector('main');
-  main.style.visibility = 'hidden';
-  main.style.minHeight = '100vh';
+    const main = document.querySelector('main');
+    main.style.visibility = 'hidden';
+    main.style.minHeight = '100vh';
 
-  fetch(filePath)
-    .then(res => {
-      if (!res.ok) throw new Error('Page not found');
-      return res.text();
-    })
-    .then(html => {
-      main.innerHTML = `<div id="main-content">${html}</div>`;
+    fetch(filePath)
+      .then(res => {
+        if (!res.ok) throw new Error('Page not found');
+        return res.text();
+      })
+      .then(html => {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
 
-      requestAnimationFrame(() => {
+        // Remove any header/footer inside the fragment
+        const header = tempDiv.querySelector('header');
+        const footer = tempDiv.querySelector('footer');
+        if (header) header.remove();
+        if (footer) footer.remove();
+        main.innerHTML = `<div id="main-content">${tempDiv.innerHTML}</div>`;
+        requestAnimationFrame(() => {
+          main.style.visibility = 'visible';
+          main.style.minHeight = '';
+          updateNavbar(path);
+          resolve();
+        });
+      })
+      .catch(err => {
+        main.innerHTML = '<h2>404 - Page Not Found</h2>';
         main.style.visibility = 'visible';
-        main.style.minHeight = '';
-        updateNavbar(path);
-
-        // Scroll to hash if it exists
-        if (window.location.hash) {
-          const target = document.querySelector(window.location.hash);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          window.scrollTo(0, 0);
-        }
+        console.error(err);
+        reject(err);
       });
-    })
-    .catch(err => {
-      main.innerHTML = '<h2>404 - Page Not Found</h2>';
-      main.style.visibility = 'visible';
-      console.error(err);
-    });
+  });
 }
 
 // Call this only on demand
 function navigateTo(path) {
-  const main = document.querySelector('main');
-
   const [pathname, hash] = path.split('#');
   const normalizedPath = normalizePath(pathname);
 
-  if (normalizedPath === '/') {
-    if (main.dataset.original) {
-      main.innerHTML = main.dataset.original;
-      updateNavbar('/');
-    }
-    history.pushState({}, '', '/');
+  safeMountDynamicPage(normalizedPath).then(() => {
     if (hash) {
       const target = document.querySelector(`#${hash}`);
       if (target) target.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo(0, 0);
     }
-    return;
-  }
+  });
 
-  // Continue with normal routing
-  safeMountDynamicPage(path);
   history.pushState({}, '', path);
 }
 
@@ -82,14 +81,13 @@ document.addEventListener('click', (e) => {
   e.preventDefault();
   const path = link.getAttribute('href');
 
-  if (path.startsWith('#')) {
+  if (path === '/' || !path.startsWith('#')) {
+    navigateTo(path); // all SPA routes including home
+  } else if (path.startsWith('#')) {
     // Pure hash link on current page
     const target = document.querySelector(path);
     if (target) target.scrollIntoView({ behavior: 'smooth' });
-    history.pushState({}, '', path); // update URL without reloading
-  } else {
-    // Full SPA navigation
-    navigateTo(path);
+    history.pushState({}, '', path);
   }
 });
 
