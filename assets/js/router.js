@@ -48,12 +48,19 @@ function safeMountDynamicPage(path) {
 function navigateTo(path) {
   const main = document.querySelector('main');
 
-  if (path === '/') {
+  const [pathname, hash] = path.split('#');
+  const normalizedPath = normalizePath(pathname);
+
+  if (normalizedPath === '/') {
     if (main.dataset.original) {
       main.innerHTML = main.dataset.original;
       updateNavbar('/');
     }
     history.pushState({}, '', '/');
+    if (hash) {
+      const target = document.querySelector(`#${hash}`);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
     return;
   }
 
@@ -63,8 +70,8 @@ function navigateTo(path) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const currentPath = window.location.pathname;
-  safeMountDynamicPage(currentPath); // your own routing logic
+  const currentPath = normalizePath(window.location.pathname);
+  safeMountDynamicPage(currentPath);
 });
 
 // Click events for in-page nav buttons
@@ -79,7 +86,7 @@ document.addEventListener('click', (e) => {
 
 // When user clicks browser back/forward buttons
 window.addEventListener('popstate', () => {
-  const path = window.location.pathname;
+  const path = normalizePath(window.location.pathname);
   const main = document.querySelector('main');
 
   if (path === '/' && main.dataset.original) {
@@ -131,14 +138,3 @@ function updateNavbar(path) {
     sideMenu.appendChild(li2);
   });
 }
-
-main.style.visibility = 'hidden'; // hide before inject
-
-fetch(filePath)
-  .then(res => res.text())
-  .then(html => {
-    main.innerHTML = `<div id="main-content">${html}</div>`;
-    requestAnimationFrame(() => {
-      main.style.visibility = 'visible'; // show after next paint
-    });
-  });
