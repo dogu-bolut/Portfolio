@@ -10,17 +10,10 @@ const normalizePath = (path) => path.endsWith("/") && path.length > 1 ? path.sli
 function safeMountDynamicPage(path) {
   const filePath = routes[path];
   if (!filePath) return;
-  window.scrollTo(0, 0);
 
   const main = document.querySelector('main');
-
-  // Backup homepage HTML once
-  if (!main.dataset.original) {
-    main.dataset.original = main.innerHTML;
-  }
-
   main.style.visibility = 'hidden';
-  main.style.minHeight = '100vh'; // optional: avoid content shift
+  main.style.minHeight = '100vh';
 
   fetch(filePath)
     .then(res => {
@@ -29,11 +22,19 @@ function safeMountDynamicPage(path) {
     })
     .then(html => {
       main.innerHTML = `<div id="main-content">${html}</div>`;
+
       requestAnimationFrame(() => {
-        window.scrollTo(0, 0);
         main.style.visibility = 'visible';
-        main.style.minHeight = ''; // reset if you set it
+        main.style.minHeight = '';
         updateNavbar(path);
+
+        // Scroll to hash if it exists
+        if (window.location.hash) {
+          const target = document.querySelector(window.location.hash);
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo(0, 0);
+        }
       });
     })
     .catch(err => {
