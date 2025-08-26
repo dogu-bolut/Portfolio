@@ -76,12 +76,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Click events for in-page nav buttons
 document.addEventListener('click', (e) => {
-  const link = e.target.closest('.cta');
+  const link = e.target.closest('a.cta, a.scroll-link');
   if (!link) return;
 
   e.preventDefault();
   const path = link.getAttribute('href');
-  navigateTo(path);
+
+  if (path.startsWith('#')) {
+    // Pure hash link on current page
+    const target = document.querySelector(path);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    history.pushState({}, '', path); // update URL without reloading
+  } else {
+    // Full SPA navigation
+    navigateTo(path);
+  }
 });
 
 // When user clicks browser back/forward buttons
