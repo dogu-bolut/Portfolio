@@ -112,13 +112,13 @@ const navbarConfigs = {
     { text: 'Contacts', href: '#contact' },
   ],
   '/games': [
-    { text: 'Home', href: '/' },
+    { text: 'Home', href: '#home' },
     { text: 'Games', href: '#games' },
     { text: 'Tech Stack', href: '#tech-stack' },
     { text: 'Contact', href: '#contact' },
   ],
   '/web': [
-    { text: 'Home', href: '/' },
+    { text: 'Home', href: '#home' },
     { text: 'Projects', href: '#web-projects' },
     { text: 'Tech Stack', href: '#tech-stack' },
     { text: 'Contact', href: '#contact' },
