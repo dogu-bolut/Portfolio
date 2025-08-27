@@ -119,7 +119,7 @@ const navbarConfigs = {
   ],
   '/web': [
     { text: 'Home', href: '/' },
-    { text: 'Web Projects', href: '#web-projects' },
+    { text: 'Projects', href: '#web-projects' },
     { text: 'Tech Stack', href: '#tech-stack' },
     { text: 'Contact', href: '#contact' },
   ],

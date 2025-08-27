@@ -35,6 +35,10 @@ a {
   text-decoration: none;
 }
 
+[id] {
+  scroll-margin-top: 70px; /* equal to sticky header height */
+}
+
 .container {
   max-width: 1480px;
   margin: 0px auto;
