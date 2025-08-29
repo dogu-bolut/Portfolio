@@ -88,3 +88,50 @@ document.getElementById('sideMenu').addEventListener('click', (e) => {
     toggleMenu();
   }
 });
+
+function openModal() {
+
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+  const captionText = document.getElementById('modalCaption');
+  const images = Array.from(document.querySelectorAll('.image-container img'));
+  let currentIndex = 0;
+
+  // Open modal on click
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+      captionText.innerHTML = img.alt; // Use alt as caption, e.g., "Web Page 1"
+      currentIndex = index;
+    });
+  });
+
+  // Close modal
+  document.querySelector('.close').addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Navigation arrows
+  document.querySelector('.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    modalImg.src = images[currentIndex].src;
+    captionText.innerHTML = images[currentIndex].alt;
+  });
+
+  document.querySelector('.next').addEventListener('click', () => {
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    modalImg.src = images[currentIndex].src;
+    captionText.innerHTML = images[currentIndex].alt;
+  });
+
+  // Close on outside click or ESC
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') modal.style.display = 'none';
+    if (e.key === 'ArrowLeft') document.querySelector('.prev').click();
+    if (e.key === 'ArrowRight') document.querySelector('.next').click();
+  });
+}

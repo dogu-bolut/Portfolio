@@ -39,6 +39,7 @@ function safeMountDynamicPage(path) {
           main.style.visibility = 'visible';
           main.style.minHeight = '';
           updateNavbar(path);
+          if(path === '/web') openModal();
           resolve();
         });
       })
