@@ -1,4 +1,4 @@
-.contact-section{
+.contact-section {
   background-color: #000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-.contact-container{
+.contact-container {
   margin-top: 3rem;
   display: grid;
   justify-content: space-between;
@@ -18,96 +18,106 @@
   gap: 4rem;
 }
 
-.contact-details{
+.contact-details {
   padding-top: 20px;
 }
 
-.contact-left h2{
+.contact-left h2 {
   font-size: 2rem;
   color: #fff;
   margin-bottom: 5px;
 }
 
-.contact-left p{
+.contact-left p {
   color: #fff;
   opacity: .8;
   margin-bottom: 10px;
   font-weight: 300;
 }
 
-.contact-left .icon{
+.contact-left .icon {
   font-size: 1.2rem;
   margin-right: 20px;
   letter-spacing: 1.2rem;
 }
 
-.contact-item{
+.contact-item {
   display: flex;
   margin-bottom: 10px;
   align-items: center;
   color: #777;
 }
 
-.contact-item a{
+.contact-item a {
   display: flex;
   margin-bottom: 10px;
   align-items: center;
   color: #777;
 }
 
-.contact-item a:hover{
+.contact-item a:hover {
   color: var(--color-chocolate-orange);
 }
 
-.contact-right{
-  color: #ddd;
-  padding: 10px;
+.contact-right {
+  background: #111;
+  /* near-black to separate from full black */
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.contact-right form{
-  margin-top: 1rem;
+.contact-right form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-.contact-right form label{
-  margin: 10px 0 5px;
-  font-weight: 600;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  font-size: 15px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
 
-.contact-right form input,
-.contact-right form textarea{
-  resize: none;
-  padding: 10px;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-orange-red);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.3);
   outline: none;
-  background-color: transparent;
-  border: 1px solid #222;
-  border-radius: 5px;
-  font-size: 16px;
-  color: #fff;
 }
 
-.contact-right form button{
-  margin-top: 1rem;
-  padding: 10px 15px;
-  background-color: #666;
+.submit-btn {
+  background: var(--color-orange-red);
   color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px;
   border: none;
-  border-radius: 5px;
-  outline: none;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.contact-right form button:hover{
-  background-color: #fff;
-  color: #222;
-  cursor: pointer;
-  transition: .7s ease-in-out;
+.submit-btn:hover {
+  background: var(--color-dark-orange);
+  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.3);
 }
 
 @media screen and (max-width: 1080px) {
-  .contact-container{
+  .contact-container {
     grid-template-columns: 1fr;
   }
 }
