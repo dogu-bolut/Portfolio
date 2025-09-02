@@ -3,6 +3,7 @@ const routes = {
   '/games': 'assets/pages/games.html',
   '/web': 'assets/pages/web.html',
   '/mobile': 'assets/pages/mobile.html',
+  '/erp': 'assets/pages/erp.html'
 };
 
 const normalizePath = (path) => path.endsWith("/") && path.length > 1 ? path.slice(0, -1) : path;
@@ -121,6 +122,12 @@ const navbarConfigs = {
   '/web': [
     { text: 'Home', href: '#home' },
     { text: 'Projects', href: '#web-projects' },
+    { text: 'Tech Stack', href: '#tech-stack' },
+    { text: 'Contact', href: '#contact' },
+  ],
+  '/erp': [
+    { text: 'Home', href: '#home' },
+    { text: 'Games', href: '#games' },
     { text: 'Tech Stack', href: '#tech-stack' },
     { text: 'Contact', href: '#contact' },
   ],
