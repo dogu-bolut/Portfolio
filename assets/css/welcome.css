@@ -355,7 +355,7 @@
 .erpwelcome img {
   width: 450px;
   padding-bottom: 50px;
-  filter: drop-shadow(0 0 8px #ff9800);
+  filter: drop-shadow(0 0 1px #ff9800);
   transform-style: preserve-3d;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-radius: 12px;
