@@ -128,7 +128,7 @@ const navbarConfigs = {
   ],
   '/erp': [
     { text: 'Home', href: '#home' },
-    { text: 'Games', href: '#games' },
+    { text: 'Journey', href: '#journey' },
     { text: 'Tech Stack', href: '#tech-stack' },
     { text: 'Contact', href: '#contact' },
   ],
