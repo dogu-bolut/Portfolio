@@ -217,10 +217,12 @@
     font-weight: bold;
     cursor: pointer;
   }
-  .close{
+
+  .close {
     top: 15px;
     right: 35px;
   }
+
   .prev,
   .next {
     top: 50%;
@@ -266,7 +268,7 @@
   }
 
   /* Show caption when modal image is active */
-  .modal-content:hover + .caption,
+  .modal-content:hover+.caption,
   .caption.show {
     opacity: 1;
     transform: translateY(0);
@@ -343,6 +345,20 @@
 .profile img {
   width: 380px;
   padding-bottom: 50px;
+}
+
+.erpwelcome {
+  perspective: 1000px;
+  display: inline-block;
+}
+
+.erpwelcome img {
+  width: 450px;
+  padding-bottom: 50px;
+  filter: drop-shadow(0 0 8px #ff9800);
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
 }
 
 .features {
@@ -487,6 +503,10 @@
     width: 300px;
   }
 
+  .erpwelcome img {
+    width: 520px;
+  }
+
   .left-container h2 {
     font-size: 30px;
   }
@@ -499,6 +519,10 @@
 @media screen and (max-width:768px) {
   .profile img {
     width: 200px;
+  }
+
+  .erpwelcome img {
+    width: 320px;
   }
 
   .intro {

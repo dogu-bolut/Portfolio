@@ -135,3 +135,26 @@ function openModal() {
     if (e.key === 'ArrowRight') document.querySelector('.next').click();
   });
 }
+
+function addImageEffect() {
+  const card = document.querySelector(".erpwelcome img");
+
+  card.addEventListener("mousemove", (e) => {
+  const rect = card.getBoundingClientRect();
+  const x = e.clientX - rect.left; // mouse X inside element
+  const y = e.clientY - rect.top;  // mouse Y inside element
+
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+
+  // calculate rotation (adjust 15 for intensity)
+  const rotateX = ((y - centerY) / centerY) * -15;
+  const rotateY = ((x - centerX) / centerX) * 15;
+
+  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+  card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+  });
+}
