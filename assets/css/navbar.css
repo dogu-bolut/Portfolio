@@ -7,7 +7,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0rem;
+  padding: 1rem 0;
 }
 
 .nav-menu-bar {
@@ -116,7 +116,7 @@ header {
 }
 
 .side-menu ul li {
-  padding: 8px 0px;
+  padding: 8px 0;
 }
 
 .side-menu ul li a {
@@ -206,7 +206,6 @@ header {
 
 .mobile-buttons a {
   display: flex;
-  align-items: left;
   justify-content: left;
   font-size: 14px;
   padding: 10px 12px;
