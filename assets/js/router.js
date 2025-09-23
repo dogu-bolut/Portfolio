@@ -2,7 +2,6 @@ const routes = {
   '/': 'index.html',
   '/games': 'assets/pages/games.html',
   '/web': 'assets/pages/web.html',
-  '/mobile': 'assets/pages/mobile.html',
   '/erp': 'assets/pages/erp.html'
 };
 
