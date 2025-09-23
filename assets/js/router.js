@@ -41,7 +41,10 @@ function safeMountDynamicPage(path) {
           main.style.minHeight = '';
           updateNavbar(path);
           if(path === '/web') openModal();
-          if(path === '/erp') addImageEffect();
+          if(path === '/erp') {
+            addImageEffect();
+            journeyTextAnimation();
+          }
           resolve();
         });
       })

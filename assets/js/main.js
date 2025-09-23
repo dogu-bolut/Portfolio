@@ -158,3 +158,30 @@ function addImageEffect() {
   card.style.transform = "rotateX(0) rotateY(0) scale(1)";
   });
 }
+
+function journeyTextAnimation() {
+  const steps = document.querySelectorAll(".story-step");
+  if (!steps.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        const index = Array.from(steps).indexOf(entry.target);
+
+        if (entry.isIntersecting) {
+          // Add animation when visible
+          entry.target.style.animation = `fadeInUp 1s forwards`;
+          entry.target.style.animationDelay = `${index * 0.8}s`;
+        } else {
+          // Reset animation when not visible
+          entry.target.style.animation = "none";
+        }
+      });
+    },
+    { threshold: 0.3, rootMargin: "0px 0px -100px 0px" }
+  );
+
+  requestAnimationFrame(() => {
+    steps.forEach(step => observer.observe(step));
+  });
+}
