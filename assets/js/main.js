@@ -29,7 +29,7 @@ if (scrollHeight > navHeight) {
 } else {
   navbar.classList.remove('fixed-nav');
 }
-if (scrollHeight > 700) {
+if (scrollHeight > 500) {
   topLink.classList.add('show-link');
 } else {
   topLink.classList.remove('show-link');
@@ -53,7 +53,7 @@ link.addEventListener('click', (e) => {
   if (!fixedNav) {
     position -= navHeight;
   }
-  if (navHeight > 82) {
+  if (navHeight > 50) {
     position += containerHeight;
   }
 
