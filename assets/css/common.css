@@ -36,7 +36,8 @@ a {
 }
 
 [id] {
-  scroll-margin-top: 70px; /* equal to sticky header height */
+  scroll-margin-top: 70px;
+  /* equal to sticky header height */
 }
 
 .container {
@@ -145,5 +146,12 @@ footer p span {
   .section-header h2 {
     font-size: 32px;
     letter-spacing: 0.05rem;
+  }
+
+  .prt-link {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 5px 10px;
+    margin: 5px;
   }
 }
