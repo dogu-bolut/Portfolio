@@ -123,11 +123,16 @@ pub const BOOK_MEETING_URL: &str = "https://calendar.app.google/oDQZRGp8SBAZg6HM
 pub const DOWNLOAD_CV_LABEL: &str = "Download CV";
 pub const DOWNLOAD_CV_URL: &str = "/assets/pdf/Dogu%20Bolut%20CV%20-%20English.pdf";
 
-/// Netlify Forms: the form is detected from the static copy in `index.html`;
-/// `FORM_ACTION` is the page shown after a successful submit.
-pub const FORM_NAME: &str = "contact";
-pub const FORM_ACTION: &str = "/thanks";
-pub const FORM_HONEYPOT: &str = "bot-field";
+/// Web3Forms (web3forms.com) emails each message to the inbox the access key
+/// was created for. The key is public by design: it can only send to that inbox.
+pub const FORM_ACTION: &str = "https://api.web3forms.com/submit";
+pub const FORM_ACCESS_KEY: &str = "e9f3b8f3-284a-4a46-9df5-b1cdf9d5641b";
+/// Web3Forms redirects here after sending; it must be an absolute URL.
+pub const FORM_NEXT: &str = "https://dogubolut.netlify.app/thanks";
+pub const FORM_SUBJECT: &str = "New message from your portfolio";
+pub const FORM_FROM_NAME: &str = "Dogu Bolut Portfolio";
+/// Web3Forms drops any submission that ticks this hidden checkbox (bots do).
+pub const FORM_HONEYPOT: &str = "botcheck";
 pub const CONTACT_HEADING: &str = "Contacts";
 pub const CONTACT_SUBHEADING: &str = "Let's Work Together!";
 pub const FORM_NAME_PLACEHOLDER: &str = "Full Name";

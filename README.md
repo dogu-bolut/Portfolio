@@ -133,14 +133,10 @@ Pages fetched this way are the original design, with its old scripts and stylesh
 - **Gradient for primary actions:** `--accent-gradient` (orange-red → orange) fills Book Meeting, Start the tour, Submit, the tracker and Next up buttons, and the section heading underlines. Hover adds glow instead of switching colour.
 - **One glow per screen:** a soft orange glow (`--cta-glow`) marks only the key action in view: Start the tour on home, the navbar's Book Meeting on the experience pages (`body:not(:has(.tour-card))`), the Next up arrow at the end of each experience and Send in the contact form. Everything else uses neutral depth (`--lift`, `--shadow`), and buttons only glow on hover. Nothing pulses. "Learn more" pills are tinted at rest and fill with the gradient on hover.
 
-**Contact form (Netlify Forms)**
-- **Why:** Formspree stopped delivering messages, so the form now uses Netlify Forms, which is built into the host and needs no third-party account or JavaScript.
-- **How it works:** the contact form is rendered by WASM, which Netlify's build-time form detection can't see, so `index.html` holds a hidden static copy (`<form name="contact" data-netlify="true" netlify-honeypot="bot-field">`) that registers the fields. The real form posts `form-name=contact` with name, email and message to `/thanks`, an app route that confirms the message was sent. Bots that fill the hidden `bot-field` honeypot are dropped.
-- **One-time Netlify setup:**
-  1. In Netlify, open the site, then **Forms**, and click **Enable form detection**.
-  2. Redeploy (push a commit, or **Deploys → Trigger deploy**). A form named `contact` should then appear under **Forms**.
-  3. Under **Site configuration → Notifications → Emails and webhooks → Form submission notifications**, add an email notification for the `contact` form, so every message is also emailed to you.
-- **Limits:** the free plan includes 100 submissions a month. Submissions can always be read under **Forms** in the dashboard.
+**Contact form (Web3Forms)**
+- **Why:** Formspree stopped delivering, Netlify Forms needs switching on in the dashboard, and FormSubmit was down when tested. [Web3Forms](https://web3forms.com) needs no dashboard: the form posts to `https://api.web3forms.com/submit`, and each message arrives as an email.
+- **Access key:** `FORM_ACCESS_KEY` in `src/data.rs`. It was created at web3forms.com for dogubolut@gmail.com. It's public by design: it can only send mail to that inbox. To change the receiving address, create a new key there and replace it.
+- **How it works:** hidden fields set the email subject, the sender name and the page to return to (`redirect`, `https://dogubolut.netlify.app/thanks`). Bots that tick the hidden `botcheck` box are dropped. The sender's `email` field becomes the reply-to address, so replying to the email answers them directly.
 
 **Contact form look**
 - The form is a card: a "Send a message" header with a reply-time note, name and email side by side (stacked under 600px), fields with leading icons that turn orange on focus along with a soft focus ring, a full-width Submit button with a paper-plane icon, and a one-line privacy note. Field names, placeholders and the Submit label are unchanged.

@@ -2,9 +2,10 @@ use leptos::prelude::*;
 
 use crate::components::SectionHeading;
 use crate::data::{
-    CONTACT_HEADING, CONTACT_ITEMS, CONTACT_SUBHEADING, FORM_ACTION, FORM_EMAIL_PLACEHOLDER,
-    FORM_HONEYPOT, FORM_MESSAGE_PLACEHOLDER, FORM_NAME, FORM_NAME_PLACEHOLDER, FORM_NOTE,
-    FORM_PRIVACY, FORM_SUBMIT, FORM_TITLE,
+    CONTACT_HEADING, CONTACT_ITEMS, CONTACT_SUBHEADING, FORM_ACCESS_KEY, FORM_ACTION,
+    FORM_EMAIL_PLACEHOLDER, FORM_FROM_NAME, FORM_HONEYPOT, FORM_MESSAGE_PLACEHOLDER,
+    FORM_NAME_PLACEHOLDER, FORM_NEXT, FORM_NOTE, FORM_PRIVACY, FORM_SUBJECT, FORM_SUBMIT,
+    FORM_TITLE,
 };
 
 #[component]
@@ -43,14 +44,16 @@ pub fn Contact(blurb: &'static str) -> impl IntoView {
                                 .collect_view()}
                         </ul>
                     </div>
-                    // Netlify Forms: `form-name` ties this to the static form in index.html,
-                    // and bots that fill the hidden honeypot field are dropped.
-                    <form class="contact-form" name=FORM_NAME action=FORM_ACTION method="POST">
-                        <input type="hidden" name="form-name" value=FORM_NAME/>
+                    // Web3Forms: posts straight to the owner's inbox, then redirects to /thanks.
+                    <form class="contact-form" action=FORM_ACTION method="POST">
+                        <input type="hidden" name="access_key" value=FORM_ACCESS_KEY/>
+                        <input type="hidden" name="subject" value=FORM_SUBJECT/>
+                        <input type="hidden" name="from_name" value=FORM_FROM_NAME/>
+                        <input type="hidden" name="redirect" value=FORM_NEXT/>
                         <p class="form-honeypot" aria-hidden="true">
                             <label>
                                 "Leave this empty: "
-                                <input name=FORM_HONEYPOT tabindex="-1" autocomplete="off"/>
+                                <input type="checkbox" name=FORM_HONEYPOT tabindex="-1" autocomplete="off"/>
                             </label>
                         </p>
                         <div class="form-head">
