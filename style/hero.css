@@ -1,0 +1,126 @@
+.welcome-section {
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  padding-block: 48px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,148,49,.07), transparent 45%),
+    radial-gradient(circle at 80% 45%, rgba(255,90,31,.09), transparent 45%),
+    var(--bg-1);
+}
+
+.welcome-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.intro {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.highlight {
+  color: var(--color-orange-red);
+}
+
+.hero-title {
+  margin-block: 8px 16px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.description {
+  color: var(--text-muted);
+}
+
+.social-media {
+  display: flex;
+  gap: 4px;
+  margin: 20px 0 0 -10px;
+  font-size: 1.6rem;
+}
+
+.social-media a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--color-pastel-orange);
+  transition: color .2s ease, background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.social-media a:hover,
+.social-media a:focus-visible {
+  background: rgba(255,90,31,.12);
+  color: var(--color-orange-red);
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-media a:hover,
+  .social-media a:focus-visible {
+    transform: none;
+  }
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.right-container {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* Home: logo in the centre, tech icons on a ring around it (never overlapping) */
+.profile {
+  position: relative;
+  width: min(360px, 100%);
+  aspect-ratio: 1;
+}
+
+.profile > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.float-icon {
+  position: absolute;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--color-pastel-orange);
+  opacity: .45;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+/* inline brand SVGs sized like the Font Awesome glyphs */
+.svg-icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+/* 8 points on a circle of radius 46%, starting 22.5deg right of top */
+.float-icon.first   { left: 67.6%; top: 7.5%; }
+.float-icon.second  { left: 92.5%; top: 32.4%; }
+.float-icon.third   { left: 92.5%; top: 67.6%; }
+.float-icon.fourth  { left: 67.6%; top: 92.5%; }
+.float-icon.fifth   { left: 32.4%; top: 92.5%; }
+.float-icon.sixth   { left: 7.5%;  top: 67.6%; }
+.float-icon.seventh { left: 7.5%;  top: 32.4%; }
+.float-icon.eighth  { left: 32.4%; top: 7.5%; }

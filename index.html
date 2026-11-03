@@ -1,346 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/assets/img/logofalan.png">
-    <title>Dogu Bolut</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link rel="stylesheet" href="/assets/css/common.css">
-    <link rel="stylesheet" href="/assets/css/navbar.css">
-    <link rel="stylesheet" href="/assets/css/welcome.css">
-    <link rel="stylesheet" href="/assets/css/experiences.css">
-    <link rel="stylesheet" href="/assets/css/certificate.css">
-    <link rel="stylesheet" href="/assets/css/skills.css">
-    <link rel="stylesheet" href="/assets/css/contact.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dogu Bolut</title>
+  <meta name="description" content="Dogu Bolut — Software Developer. Web development, game development and ERP portfolio." />
+  <meta property="og:title" content="Dogu Bolut — Software Developer" />
+  <meta property="og:image" content="/assets/img/logofalan.png" />
+  <link rel="icon" type="image/png" href="/assets/img/logofalan.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link data-trunk rel="css" href="style/tokens.css" />
+  <link data-trunk rel="css" href="style/base.css" />
+  <link data-trunk rel="css" href="style/navbar.css" />
+  <link data-trunk rel="css" href="style/hero.css" />
+  <link data-trunk rel="css" href="style/showcase.css" />
+  <link data-trunk rel="css" href="style/sections.css" />
+  <link data-trunk rel="css" href="style/cards.css" />
+  <link data-trunk rel="css" href="style/modal.css" />
+  <link data-trunk rel="css" href="style/contact.css" />
+  <link data-trunk rel="css" href="style/footer.css" />
+  <link data-trunk rel="css" href="style/hook.css" />
+  <link data-trunk rel="css" href="style/animations.css" />
+  <link data-trunk rel="css" href="style/responsive.css" />
+  <link data-trunk rel="css" href="style/main.css" />
+  <link data-trunk rel="copy-dir" href="public/assets" />
+  <link data-trunk rel="copy-file" href="public/_redirects" />
+  <link data-trunk rel="rust" data-wasm-opt="z" data-wasm-opt-params="--enable-bulk-memory --enable-nontrapping-float-to-int" />
 </head>
-
 <body>
-    <header>
-        <div id="home" class="container">
-            <div id="nav" class="navbar">
-                <div class="logo">
-                    <a href="/" class="cta prt-link"><span><i class="fa fa-home fa-sm"></i>
-                            &nbsp;&nbsp;Portfolio</span></a>
-                </div>
-                <nav>
-                    <div class="links-container">
-                        <ul>
-                            <li><a href="#home" class="scroll-link">Home</a></li>
-                            <li><a href="#experiences" class="scroll-link">Experiences</a></li>
-                            <li><a href="#certificates" class="scroll-link">Certificates</a></li>
-                            <li><a href="#contact" class="scroll-link">Contacts</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <div class="nav-menu-bar" onclick="toggleMenu();">
-                    <i class="fa fa-bars"></i>
-                </div>
-            </div>
-            <div class=" side-menu main-content" id="sideMenu">
-                <div class="menu-header">
-                    <!-- <span class="logo">Portfolio</span> -->
-                    <!-- <button class="close-btn" onclick="toggleMenu();">X</button> -->
-                </div>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#experiences">Experiences</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
-                    <li><a href="#contact">Contacts</a></li>
-                </ul>
-                <div class="mobile-buttons">
-                    <a href="https://calendar.app.google/oDQZRGp8SBAZg6HM9" class="btn-meeting" target="_blank">
-                        Book Meeting
-                    </a>
-                    <a href="/assets/pdf/Dogu Bolut CV - English.pdf" download="Dogu Bolut CV - English.pdf"
-                        class="btn-download">
-                        Download CV <i class="fa fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="navbar-overlay" id="navOverlay" onclick="toggleMenu();">
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="welcome-section">
-            <div class="container">
-                <div class="welcome-container">
-                    <div class="left-container">
-                        <h6 class="intro">Hi, I'm <span>Dogu Bolut</span></h6>
-                        <h2>Software Developer</h2>
-                        <p class="description">
-                            This website shows my portfolio. Feel free to explore the links below, where you can find
-                            details about almost every project I've worked on. If you have any questions, please don't
-                            hesitate to reach out to me via email.
-                        </p>
-                        <div class="social-media">
-                            <a href="https://www.linkedin.com/in/dogu-bolut/" target="_blank">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/dogu-bolut" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://instagram.com/dogubolut" target="_blank">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://x.com/dogubolut" target="_blank">
-                                <i class="fa-brands fa-x-twitter"></i>
-                            </a>
-                        </div>
-
-                        <div class="buttons">
-                            <a href="https://calendar.app.google/oDQZRGp8SBAZg6HM9" class="btn-meeting"
-                                target="_blank">Book Meeting</a>
-                            <a href="/assets/pdf/Dogu Bolut CV - English.pdf" download="Dogu Bolut CV - English.pdf"
-                                class="btn-download">
-                                Download CV &nbsp;<i class="fa fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="right-container">
-                        <div class="profile">
-                            <img src="/assets/img/logofalan.png" alt="">
-                            <div class="features">
-                                <div class="first">
-                                    <i class="fab fa-css fa-fade"></i>
-                                </div>
-                                <div class="second">
-                                    <i class="fa-brands fa-square-js fa-fade"></i>
-                                </div>
-                                <div class="third">
-                                    <i class="fab fa-html5 fa-fade"></i>
-                                </div>
-                                <div class="fourth">
-                                    <i class="fa-brands fa-node fa-fade"></i>
-                                </div>
-                                <div class="fifth">
-                                    <i class="fa-brands fa-angular fa-fade"></i>
-                                </div>
-                                <div class="sixth">
-                                    <i class="fa-brands fa-unity fa-fade"></i>
-                                </div>
-                                <div class="seventh">
-                                    <i class="fa-solid fa-database fa-fade"></i>
-                                </div>
-                                <div class="eighth">
-                                    <i class="fa-brands fa-linux fa-fade"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="experiences" class="experiences-section">
-            <div class="container">
-                <div class="section-heading">
-                    <div class="section-header">
-                        <h2>Experiences</h2>
-                    </div>
-                </div>
-                <div class="experiences-container">
-                    <div class="experiences">
-                        <div class="experience-item">
-                            <div class="indicator"></div>
-                            <div class="icon">
-                                <img src="/assets/img/web-development.png" alt="">
-                                <a href="/web" class="cta">
-                                    <h2>Web Development</h2>
-                                </a>
-                                <p>Building responsive modern websites using HTML, CSS, and JavaScript.</p>
-                                <a href="/web" class="cta spa-link">Learn more <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="experience-item">
-                            <div class="indicator"></div>
-                            <div class="icon">
-                                <img src="/assets/img/game_console.png" alt="">
-                                <a href="/games" class="cta">
-                                    <h2>Game Development</h2>
-                                </a>
-                                <p>Creating games in Unity with smooth mechanics and engaging design.</p>
-                                <a href="/games" class="cta spa-link">Learn more <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="experience-item">
-                            <div class="indicator"></div>
-                            <div class="icon">
-                                <img src="/assets/img/graphics-design.png" alt="">
-                                <a href="/erp" class="cta">
-                                    <h2>ERP</h2>
-                                </a>
-                                <p>Implement ERP systems to streamline business processes and efficiency.</p>
-                                <a href="/erp" class="cta spa-link">Learn more <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="certificates" class="certificate-section">
-            <div class="container">
-                <div class="section-heading">
-                    <div class="section-header">
-                        <h2>Certificates</h2>
-                    </div>
-                </div>
-                <div class="certificate-container">
-                    <div class="certificates">
-                        <div class="certificate-item">
-                            <div class="certificate-icon">
-                                <div class="icon-content">
-                                    <div class="certificate-text">
-                                        <h2>UNITY</h2>
-                                        <div class="hr-line"></div>
-                                        <h6>GAME DEVELOPMENT</h6>
-                                        <p>COURSE</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="certificate-details">
-                                <h2>20 January 2023</h2>
-                                <div class="hr-line"></div>
-                                <h3>Completion Certificate</h3>
-                                <p>This certificate verifies that Doğu Bolut successfully completed the course
-                                    RPG Core Combat Creator: Learn Intermediate Unity C# Coding on 01/20/2023 as taught
-                                    by Ben Tristem, Rick Davidson, GameDev.tv Team on Udemy.</p>
-                            </div>
-                        </div>
-                        <div class="certificate-item">
-                            <div class="certificate-icon">
-                                <div class="icon-content">
-                                    <div class="certificate-text">
-                                        <h2>DIGIAGE</h2>
-                                        <div class="hr-line"></div>
-                                        <h6>GAME DEVELOPMENT</h6>
-                                        <p>SUMMER CAMP</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="certificate-details">
-                                <h2>1-11 September 2022</h2>
-                                <div class="hr-line"></div>
-                                <h3>Participation Certificate</h3>
-                                <p>"Thank you for participating in the 10-day Game Development Summer Camp, hosted by
-                                    Bilişim Vadisi and organized by DIGIAGE and Oyunla Gelecek."</p>
-                            </div>
-                        </div>
-                        <div class="certificate-item">
-                            <div class="certificate-icon">
-                                <div class="icon-content">
-                                    <div class="certificate-text">
-                                        <h2>MAĞARA JAM</h2>
-                                        <div class="hr-line"></div>
-                                        <h6>GAME DEVELOPMENT</h6>
-                                        <p>HACKATHON</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="certificate-details">
-                                <h2>18-21 February 2022</h2>
-                                <div class="hr-line"></div>
-                                <h3>Participation Certificate</h3>
-                                <p>I joined the 4th Mağara Jam, creating a game within a short time, and earned a
-                                    participation certificate.</p>
-                            </div>
-                        </div>
-
-                        <div class="certificate-item">
-                            <div class="certificate-icon">
-                                <div class="icon-content">
-                                    <div class="certificate-text">
-                                        <h2>UNITY</h2>
-                                        <div class="hr-line"></div>
-                                        <h6>GAME DEVELOPMENT</h6>
-                                        <p>COURSE</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="certificate-details">
-                                <h2>22 September 2020</h2>
-                                <div class="hr-line"></div>
-                                <h3>Completion Certificate</h3>
-                                <p>This certificate verifies that Doğu Bolut successfully completed the course
-                                    Complete C# Unity Game Developer 2D on 10/22/2020 as taught by GameDev.tv Team, Rick
-                                    Davidson, Gary Pettie on Udemy.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="section-heading">
-                    <div class="section-header">
-                        <h2>Contacts</h2>
-                    </div>
-                </div>
-                <div class="contact-container">
-                    <div class="contact-left">
-                        <h2>Let's Work Together!</h2>
-                        <p>I am open to full-time positions and professional collaborations.
-                            Contact me to discuss potential work or opportunities.
-                        </p>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <a href="tel:+905367000931" target="_blank">
-                                    <span class="icon"><i class="fa-solid fa-phone"></i></span>
-                                    <span>+90 536 700 09 31</span>
-                                </a>
-                            </div>
-                            <div class="contact-item">
-                                <a href="mailto:dogubolut@gmail.com" target="_blank">
-                                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                                    <span>dogubolut@gmail.com</span>
-                                </a>
-                            </div>
-                            <div class="contact-item">
-                                <a href="https://maps.app.goo.gl/HDoekYDTvmD95tMY9" target="_blank">
-                                    <span class="icon"><i class="fa-solid fa-house"></i></span>
-                                    <span>Umraniye, Istanbul</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-right">
-                        <form action="https://formspree.io/f/xgvlodny" method="POST">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="Full Name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" placeholder="Corporate Email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <textarea id="message" name="message" rows="5" placeholder="Your Message"
-                                    required></textarea>
-                            </div>
-
-                            <button type="submit" class="submit-btn">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>
-            Copyright <span>&copy;</span> Dogu Bolut's curriculum vitae
-            <span id="date"></span>, All Rights Reserved.
-        </p>
-    </footer>
-    <a href="#home" class="scroll-link top-link">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/router.js"></script>
+  <!-- Netlify Forms detects forms in the deployed HTML at build time; the app's
+       contact form is rendered by WASM, so this hidden copy registers its fields. -->
+  <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+    <input name="bot-field" />
+  </form>
+  <noscript>
+    <h1>Dogu Bolut</h1>
+    <p>Software Developer</p>
+    <ul>
+      <li><a href="tel:+905367000931">+90 536 700 09 31</a></li>
+      <li><a href="mailto:dogubolut@gmail.com">dogubolut@gmail.com</a></li>
+      <li><a href="https://maps.app.goo.gl/HDoekYDTvmD95tMY9">Umraniye, Istanbul</a></li>
+      <li><a href="https://calendar.app.google/oDQZRGp8SBAZg6HM9">Book Meeting</a></li>
+      <li><a href="/assets/pdf/Dogu%20Bolut%20CV%20-%20English.pdf" download>Download CV</a></li>
+    </ul>
+    <ul>
+      <li><a href="/web">Web Development</a></li>
+      <li><a href="/games">Game Development</a></li>
+      <li><a href="/erp">ERP</a></li>
+    </ul>
+  </noscript>
 </body>
-
 </html>

@@ -1,0 +1,273 @@
+.section-heading {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  display: inline-block;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: var(--radius-pill);
+  background: var(--accent-gradient);
+}
+
+/* Experiences */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-top: 4px solid var(--color-orange-red);
+  border-radius: var(--radius-md);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.experience-card img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.experience-card h2,
+.project-card h2,
+.game-card h2 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.experience-card h2 a:hover,
+.project-card h2 a:hover,
+.game-card h2 a:hover {
+  color: var(--color-classic-orange);
+}
+
+.experience-card p {
+  flex: 1;
+  color: var(--text-dim);
+}
+
+/* Certificates */
+.certificate-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* --x/--y follow the cursor (dom::track_glow), lighting the card where you point */
+.certificate-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(260px circle at var(--x, -300px) var(--y, -300px), rgba(255,148,49,.08), transparent 70%),
+    var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.certificate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--accent-gradient);
+  opacity: .6;
+  transition: opacity .25s ease;
+}
+
+.certificate-card:hover {
+  border-color: rgba(255,148,49,.4);
+  box-shadow: 0 14px 36px var(--shadow);
+  transform: translateY(-4px);
+}
+
+.certificate-card:hover::before {
+  opacity: 1;
+}
+
+.certificate-badge {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 24px 18px;
+  background: rgba(255,255,255,.015);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.certificate-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(255,148,49,.14);
+  border: 1px solid rgba(255,148,49,.35);
+  border-radius: 14px;
+  color: var(--color-dark-orange);
+  font-size: 1.4rem;
+  transition: transform .25s ease;
+}
+
+.certificate-card:hover .certificate-icon {
+  transform: translateY(-2px);
+}
+
+.certificate-name {
+  min-width: 0;
+}
+
+.certificate-badge h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.certificate-badge p {
+  display: inline;
+  color: var(--color-pastel-orange);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.certificate-badge p + p::before {
+  content: " · ";
+  color: var(--text-soft);
+}
+
+.certificate-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 24px 24px;
+}
+
+.certificate-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.certificate-date {
+  color: var(--color-dark-orange);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.certificate-kind {
+  padding: 4px 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius-pill);
+  color: var(--text-light);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+.certificate-kind.completion {
+  background: rgba(255,148,49,.14);
+  border-color: transparent;
+  color: var(--color-pastel-orange);
+}
+
+.certificate-details p {
+  color: var(--text-dim);
+  font-size: .95rem;
+}
+
+/* Tech stack */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.tech-group {
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+}
+
+.tech-group h3 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-0);
+  color: var(--text-light);
+  font-size: .9rem;
+}
+
+/* ERP journey */
+.story {
+  display: grid;
+  gap: 20px;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.story-step {
+  padding: 20px 24px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--color-orange-red);
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+}
+
+/* 404 */
+.not-found {
+  min-height: 60vh;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+}
+
+.not-found p {
+  margin-block: 16px 28px;
+  color: var(--text-muted);
+}
