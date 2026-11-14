@@ -37,7 +37,7 @@
           </p>
           <h1>Servis Takip</h1>
           <p class="legal-meta">
-            <span class="legal-chip"><i class="fa-regular fa-calendar" aria-hidden="true"></i> <strong>Son güncelleme:</strong> 11 Kasım 2026</span>
+            <span class="legal-chip"><i class="fa-regular fa-calendar" aria-hidden="true"></i> <strong>Son güncelleme:</strong> 13 Kasım 2026</span>
             <span class="legal-chip"><i class="fa-solid fa-van-shuttle" aria-hidden="true"></i> Android app by Dogu Bolut</span>
           </p>
         </div>
@@ -71,8 +71,17 @@
           <p>Ayarlar → Hesap ve eşitleme bölümünden e-posta adresiniz ve bir şifreyle hesap açarsanız kayıtlarınız,
           belgeleriniz ve ayarlarınız telefonlarınız arasında eşitlenmek için sunucularımızda saklanır. Şifreniz
           Supabase tarafından yalnızca geri çözülemeyen biçimde (hash) saklanır; biz şifrenizi göremeyiz. Veriler yolda şifrelenir
-          (HTTPS) ve yalnızca sizin hesabınız tarafından okunabilir. Eşitleme için Supabase hizmetini kullanıyoruz;
-          sunucular yurt dışında, Hindistan'ın Mumbai bölgesindedir.</p>
+          (HTTPS) ve yalnızca sizin hesabınız ile garajınıza sizin eklediğiniz kişiler tarafından okunabilir.
+          Eşitleme için Supabase hizmetini kullanıyoruz; sunucular yurt dışında, Hindistan'ın Mumbai bölgesindedir.</p>
+          <h3>Garajı paylaşmak (filo)</h3>
+          <p>Ayarlar → Hesap ve eşitleme → Filo bölümünden bir düzenleyici veya sürücü davet edebilirsiniz. Davet,
+          yazdığınız e-posta adresi için oluşturulan ve 7 gün geçerli bir koddur; kodu siz gönderirsiniz, biz kimseye
+          e-posta atmayız. Davet ettiğiniz kişiler garajınızdaki kayıtları görür: düzenleyiciler bütün araçları, sürücüler
+          yalnızca kendilerine atadığınız araçları (sürücü listesi ve ayarlarınız hariç). Garajınızdaki kişileri ve onların
+          e-posta adreslerini Filo ekranında görürsünüz. Bir kişiyi garajdan çıkardığınızda veya kişi garajdan
+          ayrıldığında, garajın kayıtları onun telefonundan bir sonraki eşitlemede silinir. Başkasının garajına
+          katıldığınızda, kendi kayıtlarınızı garaja eklemeyi seçmezseniz telefonunuzdaki kayıtlarınız (önce yedek
+          almanız önerilir) telefondan kaldırılır.</p>
           <h3>Belgeden doldur</h3>
           <p>Ruhsat, muayene raporu veya poliçe fotoğrafından form doldurma özelliği metni telefonunuzda okur (Google ML
           Kit, cihaz içi). Fotoğraf okunduktan sonra silinir; hiçbir yere gönderilmez.</p>
@@ -118,8 +127,9 @@
             verilerin yurt dışına aktarımı için açık rızanız (KVKK md. 9). Rızanızı uygulamada giriş yapmadan önce
             alırız; hesabınızı silerek dilediğiniz zaman geri alabilirsiniz.</li>
             <li><strong>Yurt dışına aktarım ve alıcılar:</strong> Veriler, barındırma hizmeti veren Supabase Inc.'in
-            Hindistan'daki (Mumbai; Amazon Web Services) sunucularında saklanır. Verileriniz başka
-            kimseyle paylaşılmaz ve satılmaz.</li>
+            Hindistan'daki (Mumbai; Amazon Web Services) sunucularında saklanır. Garajınızı paylaşırsanız kayıtlarınızı
+            yalnızca sizin davet ettiğiniz kişiler görür; sürücüler yalnızca kendilerine atanan araçların kayıtlarını
+            görür. Verileriniz bunun dışında kimseyle paylaşılmaz ve satılmaz.</li>
             <li><strong>Saklama süresi:</strong> Hesabınızı silene kadar. Silme işleminden sonra veriler sunuculardan
             hemen kaldırılır; barındırma sağlayıcısının olası yedeklerinde en fazla 7 gün daha kalır.</li>
             <li><strong>Haklarınız (KVKK md. 11):</strong> Verilerinizin işlenip işlenmediğini öğrenme, bilgi isteme,
@@ -149,8 +159,16 @@
           <p>If you create an account with your email address and a password under Ayarlar → Hesap ve eşitleme
           (Settings → Account and sync), your records, documents and settings are stored on our servers so they sync
           between your phones. Supabase stores your password only as a one-way hash; we can't see it. Data is
-          encrypted in transit (HTTPS) and readable only by your account. Sync runs on Supabase, with servers in the
-          Mumbai region (India).</p>
+          encrypted in transit (HTTPS) and readable only by your account and the people you add to your garage. Sync
+          runs on Supabase, with servers in the Mumbai region (India).</p>
+          <h3>Sharing your garage (fleet)</h3>
+          <p>Under Ayarlar → Hesap ve eşitleme → Filo you can invite an editor or a driver. An invite is a code made for
+          the email address you type, valid for 7 days; you send the code yourself, and we never email anyone. People
+          you invite see your garage's records: editors see every vehicle, drivers only the vehicles you assign to
+          them (not the driver list or your settings). You see the people in your garage and their email addresses on
+          the Filo screen. When you remove someone, or they leave, the garage's records are deleted from their phone at
+          the next sync. When you join someone else's garage and don't choose to add your own records to it, your
+          records leave your phone (we suggest saving a backup first).</p>
           <h3>Fill from a document</h3>
           <p>Filling a form from a photo of a registration, inspection report or policy reads the text on your phone
           (Google ML Kit, on-device). The photo is deleted once it has been read and is never sent anywhere.</p>
